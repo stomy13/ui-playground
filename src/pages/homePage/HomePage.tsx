@@ -1,33 +1,32 @@
-import reactLogo from '../../assets/react.svg'
-import viteLogo from '/vite.svg'
+import { useNavigate } from 'react-router-dom'
 import './HomePage.css'
-import { useState } from 'react'
+import { Card, CardActionArea, CardContent, CardMedia, Typography } from '@mui/material'
+import { paths } from '../../app/routes/paths'
 
 export function HomePage() {
-  const [count, setCount] = useState(0)
+  // TODO: use LayoutComponent
 
+  const navigate = useNavigate()
   return (
     <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      <Card sx={{ minWidth: 345, maxWidth: 345 }}>
+        <CardActionArea onClick={() => navigate(paths.heartLaundry)}> 
+          <CardMedia
+            component="img"
+            height="140"
+            image="https://img.freepik.com/free-photo/cute-kitten-staring-out-the-window-playful-curiosity-generative-ai_188544-12520.jpg"
+            alt="cat"
+          />
+          <CardContent>
+            <Typography gutterBottom variant="h5" component="div">
+              Heart Laundry❤️🧺
+            </Typography>
+            <Typography variant="body2" color="text.secondary">
+              心の洗濯をしよう
+            </Typography>
+          </CardContent>
+        </CardActionArea>
+      </Card>
     </>
   )
 }

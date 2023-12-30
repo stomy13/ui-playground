@@ -20,4 +20,3 @@ export function Routes() {
   ])
   return routes
 }
-  
