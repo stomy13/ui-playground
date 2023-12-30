@@ -1,10 +1,10 @@
-import type { ReactNode } from "react";
-import { BrowserRouter } from "react-router-dom";
+import type { ReactNode } from 'react'
+import { BrowserRouter } from 'react-router-dom'
 
 type Props = {
-  children: ReactNode;
-};
+  children: ReactNode
+}
 
 export function Providers({ children }: Props) {
-  return <BrowserRouter>{children}</BrowserRouter>;
+  return <BrowserRouter>{children}</BrowserRouter>
 }

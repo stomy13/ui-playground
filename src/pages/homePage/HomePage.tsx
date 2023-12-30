@@ -1,6 +1,12 @@
 import { useNavigate } from 'react-router-dom'
 import './HomePage.css'
-import { Card, CardActionArea, CardContent, CardMedia, Typography } from '@mui/material'
+import {
+  Card,
+  CardActionArea,
+  CardContent,
+  CardMedia,
+  Typography,
+} from '@mui/material'
 import { paths } from '../../app/routes/paths'
 
 export function HomePage() {
@@ -10,7 +16,7 @@ export function HomePage() {
   return (
     <>
       <Card sx={{ minWidth: 345, maxWidth: 345 }}>
-        <CardActionArea onClick={() => navigate(paths.heartLaundry)}> 
+        <CardActionArea onClick={() => navigate(paths.heartLaundry)}>
           <CardMedia
             component="img"
             height="140"
