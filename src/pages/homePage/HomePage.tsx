@@ -1,9 +1,9 @@
 import reactLogo from '../../assets/react.svg'
 import viteLogo from '/vite.svg'
-import './Home.css'
+import './HomePage.css'
 import { useState } from 'react'
 
-export function Home() {
+export function HomePage() {
   const [count, setCount] = useState(0)
 
   return (
