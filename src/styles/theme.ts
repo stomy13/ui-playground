@@ -9,7 +9,7 @@ export const theme = createTheme({
       contrastText: '#000',
     },
     text: {
-      primary: 'fff',
+      primary: '#fff',
       secondary: 'rgba(255, 255, 255, 0.7)',
     },
   },

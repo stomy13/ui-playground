@@ -25,7 +25,6 @@ const grey = {
 
 export const TextareaAutosize = styled(BaseTextareaAutosize)(
   ({ theme }) => `
-  width: 480px;
   font-family: 'IBM Plex Sans', sans-serif;
   font-size: 0.875rem;
   font-weight: 400;
