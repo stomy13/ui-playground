@@ -1,5 +1,4 @@
 import { useNavigate } from 'react-router-dom'
-import './HomePage.css'
 import {
   Card,
   CardActionArea,
@@ -8,13 +7,12 @@ import {
   Typography,
 } from '@mui/material'
 import { paths } from '../../app/routes/paths'
+import { MainLayout } from '../../components/mainLayout/MainLayout'
 
 export function HomePage() {
-  // TODO: use LayoutComponent
-
   const navigate = useNavigate()
   return (
-    <>
+    <MainLayout>
       <Card sx={{ minWidth: 345, maxWidth: 345 }}>
         <CardActionArea onClick={() => navigate(paths.heartLaundry)}>
           <CardMedia
@@ -33,6 +31,6 @@ export function HomePage() {
           </CardContent>
         </CardActionArea>
       </Card>
-    </>
+    </MainLayout>
   )
 }
