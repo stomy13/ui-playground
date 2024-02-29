@@ -1,17 +1,22 @@
 import { useRoutes } from 'react-router-dom'
-import { HomePage } from '../../pages/homePage/HomePage'
+import { Home } from '../../pages/Home/Home'
 import { paths } from './paths'
-import { HeartLaundryPage } from '../../pages/heartLaundryPage/heartLaundryPage'
+import { HeartLaundry } from '../../pages/HeartLaundry/HeartLaundry'
+import { Playground } from '../../pages/Playground/Playground'
 
 export function Routes() {
   const routes = useRoutes([
     {
       path: paths.home,
-      element: <HomePage />,
+      element: <Home />,
     },
     {
       path: paths.heartLaundry,
-      element: <HeartLaundryPage />,
+      element: <HeartLaundry />,
+    },
+    {
+      path: paths.playground,
+      element: <Playground />,
     },
   ])
   return routes

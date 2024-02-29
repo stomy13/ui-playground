@@ -2,7 +2,7 @@ import { Box, Button, Stack } from '@mui/material'
 import { MainLayout } from '../../components/mainLayout/MainLayout'
 import { TextareaAutosize } from '../../components/textArea/TextArea'
 
-export function HeartLaundryPage() {
+export function HeartLaundry() {
   return (
     <MainLayout>
       <Box
