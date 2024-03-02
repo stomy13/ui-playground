@@ -2,6 +2,7 @@ import { Typography } from '@mui/material'
 import { Box } from '@mui/system'
 import { Helmet } from 'react-helmet'
 import { MainLayout } from '../../components/mainLayout/MainLayout'
+import { ContextExample } from './components/ContextExample/ContextExample'
 import { UpdateStateQueue } from './components/UpdateStateQueue/UpdateStateQueue'
 
 type Props = {
@@ -26,6 +27,7 @@ export function Playground({ pageTitle }: Props) {
         }}
       >
         <UpdateStateQueue />
+        <ContextExample />
       </Box>
     </MainLayout>
   )
