@@ -2,59 +2,66 @@ module.exports = {
   root: true,
   env: { browser: true, es2020: true },
   extends: [
-    "eslint:recommended",
-    "plugin:@typescript-eslint/recommended",
-    "plugin:react/recommended",
-    "plugin:react-hooks/recommended",
-    "plugin:import/recommended",
-    "prettier",
+    'eslint:recommended',
+    'plugin:@typescript-eslint/recommended',
+    'plugin:react/recommended',
+    'plugin:react-hooks/recommended',
+    'plugin:import/recommended',
+    'prettier',
   ],
-  ignorePatterns: ["dist", ".eslintrc.cjs"],
-  parser: "@typescript-eslint/parser",
-  plugins: ["react-refresh", "unused-imports"],
+  ignorePatterns: ['dist', '.eslintrc.cjs'],
+  parser: '@typescript-eslint/parser',
+  parserOptions: {
+    project: ['./tsconfig.eslint.json'],
+  },
+  plugins: ['react-refresh', 'unused-imports'],
   settings: {
-    "import/resolver": {
+    'import/resolver': {
       typescript: {},
     },
   },
   rules: {
-    "react-refresh/only-export-components": [
-      "warn",
+    'react-refresh/only-export-components': [
+      'warn',
       { allowConstantExport: true },
     ],
-    "import/order": [
-      "error",
+    'unused-imports/no-unused-imports': 'error',
+    'import/order': [
+      'error',
       {
         groups: [
-          "builtin",
-          "external",
-          "parent",
-          "sibling",
-          "index",
-          "object",
-          "type",
+          'builtin',
+          'external',
+          'parent',
+          'sibling',
+          'index',
+          'object',
+          'type',
         ],
         pathGroups: [
           {
-            pattern: "{react,react-dom/**,react-router-dom}",
-            group: "builtin",
-            position: "before",
+            pattern: '{react,react-dom/**,react-router-dom}',
+            group: 'builtin',
+            position: 'before',
           },
           {
-            pattern: "/**",
-            group: "parent",
-            position: "before",
+            pattern: '/**',
+            group: 'parent',
+            position: 'before',
           },
         ],
-        pathGroupsExcludedImportTypes: ["builtin"],
+        pathGroupsExcludedImportTypes: ['builtin'],
         alphabetize: {
-          order: "asc",
+          order: 'asc',
         },
       },
     ],
-    "@typescript-eslint/consistent-type-imports": [
-      "error",
-      { prefer: "type-imports" },
+    '@typescript-eslint/consistent-type-imports': [
+      'error',
+      { prefer: 'type-imports' },
     ],
+    '@typescript-eslint/no-unnecessary-condition': 'error',
+    'react/jsx-uses-react': 'off',
+    'react/react-in-jsx-scope': 'off',
   },
-};
+}
