@@ -16,7 +16,7 @@ export function Routes() {
     },
     {
       path: paths.playground,
-      element: <Playground />,
+      element: <Playground pageTitle="Playground" />,
     },
   ])
   return routes
