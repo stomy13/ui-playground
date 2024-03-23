@@ -1,3 +1,4 @@
+import { useNavigate } from 'react-router-dom'
 import {
   Card,
   CardActionArea,
@@ -6,7 +7,6 @@ import {
   Typography,
 } from '@mui/material'
 import { paths } from '../../../../../app/routes/paths'
-import { useNavigate } from 'react-router-dom'
 
 export function HeartLaundryCard() {
   const navigate = useNavigate()

@@ -1,6 +1,6 @@
-import { ThemeProvider } from '@mui/material'
 import type { ReactNode } from 'react'
 import { BrowserRouter } from 'react-router-dom'
+import { ThemeProvider } from '@mui/material'
 import { theme } from '../styles/theme'
 
 type Props = {
