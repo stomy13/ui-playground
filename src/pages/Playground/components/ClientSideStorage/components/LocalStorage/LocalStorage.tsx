@@ -11,7 +11,7 @@ export function LocalStorage() {
   return (
     <Box>
       <Typography variant="h6">
-        Local Storage はタブを閉じたりリロードしたりしてもデータが維持される
+        Local Storage はタブを閉じてもデータが維持される
       </Typography>
       <Box
         sx={{
