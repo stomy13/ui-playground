@@ -1,6 +1,6 @@
-export type UseStorageFunc = () => ReturnType<typeof useStorage>
+export type UseWebStorageFunc = () => ReturnType<typeof useWebStorage>
 
-export const useStorage = (storage: Storage) => {
+export const useWebStorage = (storage: Storage) => {
   const setItem = (key: string, value: string) => {
     storage.setItem(key, value)
   }

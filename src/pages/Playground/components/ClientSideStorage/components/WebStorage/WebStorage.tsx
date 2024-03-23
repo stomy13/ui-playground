@@ -2,14 +2,14 @@ import { useState } from 'react'
 import { Button, Typography } from '@mui/material'
 import { Box } from '@mui/system'
 import { useSnackbar } from '~/components/global/Snackbar/hooks/useSnackbar'
-import type { UseStorageFunc } from '../../hooks/useStorage'
+import type { UseWebStorageFunc } from '../../hooks/useWebStorage'
 
 type Props = {
   description: string
-  useStorage: UseStorageFunc
+  useStorage: UseWebStorageFunc
 }
 
-export function Storage({ description, useStorage }: Props) {
+export function WebStorage({ description, useStorage }: Props) {
   const { setItem, getItem, removeItem, clear } = useStorage()
   const savedName = getItem('name')
   const initialCount = savedName ? Number(savedName.split(' ')[1]) + 1 : 0

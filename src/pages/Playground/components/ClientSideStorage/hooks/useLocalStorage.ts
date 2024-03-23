@@ -1,5 +1,5 @@
-import { useStorage } from './useStorage'
+import { useWebStorage } from './useWebStorage'
 
 export const useLocalStorage = () => {
-  return useStorage(localStorage)
+  return useWebStorage(localStorage)
 }
