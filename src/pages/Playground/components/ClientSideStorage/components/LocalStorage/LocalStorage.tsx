@@ -4,8 +4,10 @@ import { Box } from '@mui/system'
 import { useLocalStorage } from './hooks/useLocalStorage'
 
 export function LocalStorage() {
-  const [count, setCount] = useState(0)
   const { setItem, getItem, removeItem, clear } = useLocalStorage()
+  const savedName = getItem('name')
+  const initialCount = savedName ? Number(savedName.split(' ')[1]) + 1 : 0
+  const [count, setCount] = useState(initialCount)
   return (
     <Box>
       <Typography variant="h6">
