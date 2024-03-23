@@ -54,7 +54,7 @@ export function ScrollRefExample() {
           flexDirection: 'row',
           maxWidth: '1080px',
           overflow: 'scroll',
-          gap: '16px',
+          gap: 2,
           border: '3px solid gray',
           borderRadius: '8px',
         }}

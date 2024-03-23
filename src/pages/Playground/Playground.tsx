@@ -13,24 +13,33 @@ type Props = {
 export function Playground({ pageTitle }: Props) {
   return (
     <MainLayout>
-      <Helmet>
-        <title>{pageTitle}</title>
-      </Helmet>
-      <Typography>{"Let's play with React and MUI components!"}</Typography>
       <Box
         sx={{
-          display: 'grid',
-          gridTemplateColumns: 'repeat(3, 1fr)',
-          justifyContent: 'center',
+          display: 'flex',
+          flexDirection: 'column',
           alignItems: 'center',
           gap: 2,
-          padding: 2,
         }}
       >
-        <UpdateStateQueue />
-        <ContextExample />
+        <Helmet>
+          <title>{pageTitle}</title>
+        </Helmet>
+        <Typography>{"Let's play with React and MUI components!"}</Typography>
+        <Box
+          sx={{
+            display: 'grid',
+            gridTemplateColumns: 'repeat(3, 1fr)',
+            justifyContent: 'center',
+            alignItems: 'center',
+            gap: 2,
+            padding: 2,
+          }}
+        >
+          <UpdateStateQueue />
+          <ContextExample />
+        </Box>
+        <ScrollRefExample />
       </Box>
-      <ScrollRefExample />
     </MainLayout>
   )
 }
