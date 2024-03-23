@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { Button, Typography } from '@mui/material'
 import { Box } from '@mui/system'
+import { useSnackbar } from '~/components/global/Snackbar/hooks/useSnackbar'
 import type { UseStorageFunc } from '../../hooks/useStorage'
 
 type Props = {
@@ -13,6 +14,7 @@ export function Storage({ description, useStorage }: Props) {
   const savedName = getItem('name')
   const initialCount = savedName ? Number(savedName.split(' ')[1]) + 1 : 0
   const [count, setCount] = useState(initialCount)
+  const { showSnackbar } = useSnackbar()
   return (
     <Box>
       <Typography
@@ -38,7 +40,10 @@ export function Storage({ description, useStorage }: Props) {
         >
           Set Item
         </Button>
-        <Button variant="contained" onClick={() => alert(getItem('name'))}>
+        <Button
+          variant="contained"
+          onClick={() => showSnackbar(getItem('name'))}
+        >
           Get Item
         </Button>
         <Button variant="contained" onClick={() => removeItem('name')}>

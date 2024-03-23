@@ -45,7 +45,7 @@ module.exports = {
             position: 'before',
           },
           {
-            pattern: '/**',
+            pattern: '~/**',
             group: 'parent',
             position: 'before',
           },
