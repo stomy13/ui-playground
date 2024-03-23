@@ -1,9 +1,10 @@
 import { useContext, createContext } from 'react'
 import { EquipmentContainer } from '../EquipmentContainer/EquipmentContainer'
+import { EquipmentTitle } from '../EquipmentTitle/EquipmentTitle'
 
 export function ContextExample() {
   return (
-    <EquipmentContainer>
+    <EquipmentContainer title={<EquipmentTitle title={'Context Example'} />}>
       <Section>
         <Heading>Title</Heading>
         <Section>

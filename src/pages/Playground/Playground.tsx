@@ -2,6 +2,7 @@ import { Typography } from '@mui/material'
 import { Box } from '@mui/system'
 import { Helmet } from 'react-helmet'
 import { MainLayout } from '../../components/mainLayout/MainLayout'
+import { ClientSideStorage } from './components/ClientSideStorage/ClientSideStorage'
 import { ContextExample } from './components/ContextExample/ContextExample'
 import { ScrollRefExample } from './components/ScrollRefExample/ ScrollRefExample '
 import { UpdateStateQueue } from './components/UpdateStateQueue/UpdateStateQueue'
@@ -16,29 +17,37 @@ export function Playground({ pageTitle }: Props) {
       <Box
         sx={{
           display: 'flex',
-          flexDirection: 'column',
-          alignItems: 'center',
-          gap: 2,
+          justifyContent: 'center',
         }}
       >
-        <Helmet>
-          <title>{pageTitle}</title>
-        </Helmet>
-        <Typography>{"Let's play with React and MUI components!"}</Typography>
         <Box
           sx={{
-            display: 'grid',
-            gridTemplateColumns: 'repeat(3, 1fr)',
-            justifyContent: 'center',
-            alignItems: 'center',
+            display: 'flex',
+            flexDirection: 'column',
             gap: 2,
-            padding: 2,
           }}
         >
-          <UpdateStateQueue />
-          <ContextExample />
+          <Helmet>
+            <title>{pageTitle}</title>
+          </Helmet>
+          <Typography variant="h4">
+            {"Let's play with React and MUI components!"}
+          </Typography>
+          <ClientSideStorage />
+          <ScrollRefExample />
+          <Box
+            sx={{
+              display: 'grid',
+              gridTemplateColumns: 'repeat(3, 1fr)',
+              justifyContent: 'center',
+              alignItems: 'center',
+              gap: 2,
+            }}
+          >
+            <UpdateStateQueue />
+            <ContextExample />
+          </Box>
         </Box>
-        <ScrollRefExample />
       </Box>
     </MainLayout>
   )

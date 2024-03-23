@@ -1,6 +1,7 @@
 import { useRef } from 'react'
+import ShortcutIcon from '@mui/icons-material/Shortcut'
 import { Box } from '@mui/system'
-
+import { EquipmentTitle } from '../EquipmentTitle/EquipmentTitle'
 type Cat = {
   id: number
   imageUrl: string
@@ -43,6 +44,7 @@ export function ScrollRefExample() {
 
   return (
     <>
+      <EquipmentTitle title="Scroll Ref" icon={<ShortcutIcon />} />
       <nav>
         <button onClick={() => scrollToId(0)}>1番目</button>
         <button onClick={() => scrollToId(5)}>6番目</button>

@@ -1,23 +1,33 @@
 import { Box } from '@mui/system'
 
 type Props = {
+  title: React.ReactNode
   children: React.ReactNode
 }
 
-export function EquipmentContainer({ children }: Props) {
+export function EquipmentContainer({ title, children }: Props) {
   return (
     <Box
       sx={{
         display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        height: '300px',
-        width: '300px',
-        border: '1px solid gray',
-        borderRadius: '8px',
+        flexDirection: 'column',
+        gap: 2,
       }}
     >
-      {children}
+      {title}
+      <Box
+        sx={{
+          display: 'flex',
+          justifyContent: 'center',
+          alignItems: 'center',
+          height: '300px',
+          width: '300px',
+          border: '1px solid gray',
+          borderRadius: '8px',
+        }}
+      >
+        {children}
+      </Box>
     </Box>
   )
 }

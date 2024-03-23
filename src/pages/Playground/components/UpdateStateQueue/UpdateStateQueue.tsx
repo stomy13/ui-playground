@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { EquipmentContainer } from '../EquipmentContainer/EquipmentContainer'
+import { EquipmentTitle } from '../EquipmentTitle/EquipmentTitle'
 
 export function UpdateStateQueue() {
   const [index, setIndex] = useState(0)
@@ -13,7 +14,7 @@ export function UpdateStateQueue() {
   }
 
   return (
-    <EquipmentContainer>
+    <EquipmentContainer title={<EquipmentTitle title={'Update State Queue'} />}>
       <button onClick={handleClick}>Next {index + 1}</button>
     </EquipmentContainer>
   )
