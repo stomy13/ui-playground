@@ -1,18 +1,20 @@
-export const useLocalStorage = () => {
+export type UseStorageFunc = () => ReturnType<typeof useStorage>
+
+export const useStorage = (storage: Storage) => {
   const setItem = (key: string, value: string) => {
-    localStorage.setItem(key, value)
+    storage.setItem(key, value)
   }
 
   const getItem = (key: string) => {
-    return localStorage.getItem(key)
+    return storage.getItem(key)
   }
 
   const removeItem = (key: string) => {
-    localStorage.removeItem(key)
+    storage.removeItem(key)
   }
 
   const clear = () => {
-    localStorage.clear()
+    storage.clear()
   }
 
   return {
