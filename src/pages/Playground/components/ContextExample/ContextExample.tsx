@@ -4,7 +4,7 @@ import { EquipmentTitle } from '../EquipmentTitle/EquipmentTitle'
 
 export function ContextExample() {
   return (
-    <EquipmentContainer title={<EquipmentTitle title={'Context Example'} />}>
+    <EquipmentContainer title={<EquipmentTitle title="Context Example" />}>
       <Section>
         <Heading>Title</Heading>
         <Section>

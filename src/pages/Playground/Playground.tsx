@@ -31,7 +31,7 @@ export function Playground({ pageTitle }: Props) {
             <title>{pageTitle}</title>
           </Helmet>
           <Typography variant="h4">
-            {"Let's play with React and MUI components!"}
+            Let&apos;s play with React and MUI components!
           </Typography>
           <ClientSideStorage />
           <ScrollRefExample />

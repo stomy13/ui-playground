@@ -14,7 +14,7 @@ export function UpdateStateQueue() {
   }
 
   return (
-    <EquipmentContainer title={<EquipmentTitle title={'Update State Queue'} />}>
+    <EquipmentContainer title={<EquipmentTitle title="Update State Queue" />}>
       <button onClick={handleClick}>Next {index + 1}</button>
     </EquipmentContainer>
   )

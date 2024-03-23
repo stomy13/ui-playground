@@ -63,5 +63,15 @@ module.exports = {
     '@typescript-eslint/no-unnecessary-condition': 'error',
     'react/jsx-uses-react': 'off',
     'react/react-in-jsx-scope': 'off',
+    'react/jsx-fragments': 'error',
+    'react/jsx-curly-brace-presence': 'error',
+    'react/jsx-no-useless-fragment': 'error',
+    'react/self-closing-comp': [
+      'error',
+      {
+        component: true,
+        html: true,
+      },
+    ],
   },
 }
