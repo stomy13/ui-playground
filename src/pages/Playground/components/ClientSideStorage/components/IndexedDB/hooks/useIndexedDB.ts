@@ -1,3 +1,5 @@
+import { useUpgrade } from './useUpgrade'
+
 const dbName = 'playground'
 const dbVersion = 1
 
@@ -7,6 +9,7 @@ type TransactionInfo = {
 }
 
 export const useIndexedDB = () => {
+  const { upgrade } = useUpgrade()
   const open = (txInfo: TransactionInfo) => {
     return new Promise<IDBTransaction>((resolve, reject) => {
       const request = indexedDB.open(dbName, dbVersion)
@@ -15,23 +18,27 @@ export const useIndexedDB = () => {
       }
       request.onsuccess = () => {
         const db = request.result
-        db.onerror = event => {
-          if (event.target instanceof IDBTransaction) {
-            console.error('Database error IDBTransaction', event.target.error)
+        db.onerror = e => {
+          if (e.target instanceof IDBTransaction) {
+            console.error('Database error IDBTransaction', e.target.error)
           } else {
-            console.error('Database error', event.target)
+            console.error('Database error', e.target)
           }
         }
         const tx = db.transaction(txInfo.storeNames, txInfo.mode)
         resolve(tx)
       }
-      request.onupgradeneeded = () => {
+      request.onupgradeneeded = e => {
+        // データベースが削除される場合は何もしない
+        if (e.newVersion === null) {
+          return
+        }
+        // データベースのバージョンアップグレード
         const db = request.result
-        const swingStore = db.createObjectStore('swing', { keyPath: 'id' })
-        swingStore.createIndex('name', 'name', { unique: false })
-        swingStore.createIndex('uuid', 'uuid', { unique: true })
-        swingStore.transaction.oncomplete = () => {
-          console.log('Database created')
+        for (let i = e.oldVersion; i < e.newVersion; i++) {
+          const nextVersion = i + 1
+          console.log('Upgrade database from version', i, 'to', nextVersion)
+          upgrade(db, nextVersion)
         }
       }
     })
