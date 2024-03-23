@@ -4,7 +4,7 @@ import { useSnackbar } from '~/components/global/Snackbar/hooks/useSnackbar'
 import { useIndexedDB } from './hooks/useIndexedDB'
 
 export function IndexedDB() {
-  const { open, putItem, getItem, deleteItem } = useIndexedDB()
+  const { open, getItem, deleteItem, putSwing } = useIndexedDB()
   const { showSnackbar } = useSnackbar()
   return (
     <Box>
@@ -25,11 +25,7 @@ export function IndexedDB() {
         <Button
           variant="contained"
           onClick={async () => {
-            const tx = await open({
-              storeNames: ['swing'],
-              mode: 'readwrite',
-            })
-            await putItem(tx, 'swing', { id: 1, name: 'Swing Mk2' })
+            await putSwing({ id: 1, name: 'Swing Mk2' })
           }}
         >
           Add Item

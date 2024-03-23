@@ -87,10 +87,19 @@ export const useIndexedDB = () => {
     })
   }
 
+  const putSwing = async (swing: unknown) => {
+    const tx = await open({
+      storeNames: ['swing'],
+      mode: 'readwrite',
+    })
+    await putItem(tx, 'swing', swing)
+  }
+
   return {
     open,
     putItem,
     getItem,
     deleteItem,
+    putSwing,
   }
 }
