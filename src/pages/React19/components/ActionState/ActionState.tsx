@@ -31,7 +31,10 @@ export function ActionState() {
         >
           useActionState は useTransition と useReducer
           を組み合わせたようなフック。 useTransition
-          を使用する場合は、useActionState を使用することを検討する。
+          を使用する場合は、useActionState
+          を使用することを検討する。useActionState は useTransition
+          と異なり、dispatch 関数が連打された場合、前の dispatch
+          関数が完了してから次の dispatch 関数の実行が開始される。
         </Typography>
         <Button variant="contained" onClick={handleClick}>
           Increment
