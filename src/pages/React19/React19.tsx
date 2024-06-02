@@ -4,6 +4,7 @@ import { ActionState } from './components/ActionState/ActionState'
 import { FormAction } from './components/FormAction/FormAction'
 import { Layout } from './components/Layout/Layout'
 import { Transition } from './components/Transition/Transition'
+import { Use } from './components/Use/Use'
 
 type Props = {
   pageTitle: string
@@ -19,6 +20,7 @@ export function React19({ pageTitle }: Props) {
       <Transition />
       <ActionState />
       <FormAction />
+      <Use />
     </Layout>
   )
 }
