@@ -1,6 +1,6 @@
 import StorageIcon from '@mui/icons-material/Storage'
 import { Box } from '@mui/system'
-import { EquipmentTitle } from '../EquipmentTitle/EquipmentTitle'
+import { EquipmentTitle } from '../../../../components/domain/EquipmentTitle/EquipmentTitle'
 import { IndexedDB } from './components/IndexedDB/IndexedDB'
 import { LocalStorage } from './components/LocalStorage/LocalStorage'
 import { SessionStorage } from './components/SessionStorage/SessionStorage'

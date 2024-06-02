@@ -1,7 +1,7 @@
 import { useRef } from 'react'
 import ShortcutIcon from '@mui/icons-material/Shortcut'
 import { Box } from '@mui/system'
-import { EquipmentTitle } from '../EquipmentTitle/EquipmentTitle'
+import { EquipmentTitle } from '../../../../components/domain/EquipmentTitle/EquipmentTitle'
 type Cat = {
   id: number
   imageUrl: string

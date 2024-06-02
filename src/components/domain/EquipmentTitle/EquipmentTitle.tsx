@@ -1,7 +1,7 @@
 import AutoAwesomeIcon from '@mui/icons-material/AutoAwesome'
 import { Typography } from '@mui/material'
 import { Box } from '@mui/system'
-import { aero } from '../../../../styles/colors'
+import { aero } from '../../../styles/colors'
 
 type Props = {
   title: string

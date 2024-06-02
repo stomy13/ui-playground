@@ -1,6 +1,6 @@
 import { useState } from 'react'
+import { EquipmentTitle } from '../../../../components/domain/EquipmentTitle/EquipmentTitle'
 import { EquipmentContainer } from '../EquipmentContainer/EquipmentContainer'
-import { EquipmentTitle } from '../EquipmentTitle/EquipmentTitle'
 
 export function UpdateStateQueue() {
   const [index, setIndex] = useState(0)
