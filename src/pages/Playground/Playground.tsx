@@ -1,6 +1,6 @@
 import { Typography } from '@mui/material'
 import { Box } from '@mui/system'
-import { Helmet, HelmetProvider } from 'react-helmet-async'
+import { Helmet } from 'react-helmet-async'
 import { MainLayout } from '../../components/mainLayout/MainLayout'
 import { ClientSideStorage } from './components/ClientSideStorage/ClientSideStorage'
 import { ContextExample } from './components/ContextExample/ContextExample'
@@ -27,11 +27,9 @@ export function Playground({ pageTitle }: Props) {
             gap: 2,
           }}
         >
-          <HelmetProvider>
-            <Helmet>
-              <title>{pageTitle}</title>
-            </Helmet>
-          </HelmetProvider>
+          <Helmet>
+            <title>{pageTitle}</title>
+          </Helmet>
           <Typography variant="h4">
             Let&apos;s play with React and MUI components!
           </Typography>
