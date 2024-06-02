@@ -1,23 +1,23 @@
 import { useNavigate } from 'react-router-dom'
 import {
-  Card,
   CardActionArea,
   CardMedia,
   CardContent,
   Typography,
 } from '@mui/material'
 import { paths } from '../../../../../app/routes/paths'
+import { Card } from '../Card/Card'
 
 export function PlaygroundCard() {
   const navigate = useNavigate()
   return (
-    <Card sx={{ minWidth: 345, maxWidth: 345 }}>
+    <Card>
       <CardActionArea onClick={() => navigate(paths.playground)}>
         <CardMedia
           component="img"
           height="140"
           image="/src/assets/playground.webp"
-          alt="cat"
+          alt="playground"
         />
         <CardContent>
           <Typography gutterBottom variant="h5" component="div">

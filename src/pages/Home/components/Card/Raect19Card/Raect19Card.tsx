@@ -5,26 +5,26 @@ import {
   CardContent,
   Typography,
 } from '@mui/material'
-import { paths } from '../../../../../app/routes/paths'
+import { paths } from '~/app/routes/paths'
 import { Card } from '../Card/Card'
 
-export function HeartLaundryCard() {
+export function React19Card() {
   const navigate = useNavigate()
   return (
     <Card>
-      <CardActionArea onClick={() => navigate(paths.heartLaundry)}>
+      <CardActionArea onClick={() => navigate(paths.react19)}>
         <CardMedia
           component="img"
           height="140"
-          image="https://img.freepik.com/free-photo/cute-kitten-staring-out-the-window-playful-curiosity-generative-ai_188544-12520.jpg"
-          alt="cat"
+          image="/src/assets/react19.webp"
+          alt="react19"
         />
         <CardContent>
           <Typography gutterBottom variant="h5" component="div">
-            Heart Laundry❤️🧺
+            React19🛠
           </Typography>
           <Typography variant="body2" color="text.secondary">
-            心の洗濯をしよう
+            React19を使ってみましょう！
           </Typography>
         </CardContent>
       </CardActionArea>

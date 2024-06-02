@@ -1,4 +1,5 @@
 import { useRoutes } from 'react-router-dom'
+import { React19 } from '~/pages/React19/React19'
 import { HeartLaundry } from '../../pages/HeartLaundry/HeartLaundry'
 import { Home } from '../../pages/Home/Home'
 import { Playground } from '../../pages/Playground/Playground'
@@ -17,6 +18,10 @@ export function Routes() {
     {
       path: paths.playground,
       element: <Playground pageTitle="Playground" />,
+    },
+    {
+      path: paths.react19,
+      element: <React19 pageTitle="React 19" />,
     },
   ])
   return routes
