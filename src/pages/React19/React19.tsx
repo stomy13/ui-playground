@@ -1,5 +1,6 @@
 import { Typography } from '@mui/material'
 import { Helmet } from 'react-helmet-async'
+import { ActionState } from './components/ActionState/ActionState'
 import { Layout } from './components/Layout/Layout'
 import { Transition } from './components/Transition/Transition'
 
@@ -15,6 +16,7 @@ export function React19({ pageTitle }: Props) {
       </Helmet>
       <Typography variant="h4">React 19</Typography>
       <Transition />
+      <ActionState />
     </Layout>
   )
 }

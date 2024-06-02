@@ -1,18 +1,17 @@
-import { useState, useTransition, useCallback } from 'react'
+import { useCallback, useActionState } from 'react'
 import { Button, Typography } from '@mui/material'
 import { Box } from '@mui/system'
 import { EquipmentTitle } from '~/components/domain/EquipmentTitle/EquipmentTitle'
 
-export function Transition() {
-  const [count, setCount] = useState(0)
-  const [isPending, startTransition] = useTransition()
+export function ActionState() {
+  const [count, increment, isPending] = useActionState(async currentCount => {
+    await new Promise(resolve => setTimeout(resolve, 1000))
+    return currentCount + 1
+  }, 0)
 
   const handleClick = useCallback(() => {
-    startTransition(async () => {
-      await new Promise(resolve => setTimeout(resolve, 1000))
-      setCount(prev => prev + 1)
-    })
-  }, [startTransition])
+    increment()
+  }, [increment])
 
   return (
     <Box
@@ -22,7 +21,7 @@ export function Transition() {
         gap: 2,
       }}
     >
-      <EquipmentTitle title="Transition" />
+      <EquipmentTitle title="ActionState" />
       <Box>
         <Typography
           variant="h6"
@@ -30,7 +29,9 @@ export function Transition() {
             whiteSpace: 'pre-wrap',
           }}
         >
-          useTransition に非同期関数（a.k.a Actions）を渡せるようになった
+          useActionState は useTransition と useReducer
+          を組み合わせたようなフック。 useTransition
+          を使用する場合は、useActionState を使用することを検討する。
         </Typography>
         <Button variant="contained" onClick={handleClick}>
           Increment
