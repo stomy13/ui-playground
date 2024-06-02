@@ -5,6 +5,7 @@ import { FormAction } from './components/FormAction/FormAction'
 import { Layout } from './components/Layout/Layout'
 import { Transition } from './components/Transition/Transition'
 import { Use } from './components/Use/Use'
+import { UseOptimistic } from './components/UseOptimistic/UseOptimistic'
 
 type Props = {
   pageTitle: string
@@ -21,6 +22,7 @@ export function React19({ pageTitle }: Props) {
       <ActionState />
       <FormAction />
       <Use />
+      <UseOptimistic />
     </Layout>
   )
 }
