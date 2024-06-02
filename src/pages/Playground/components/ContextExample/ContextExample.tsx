@@ -25,9 +25,8 @@ export function Section({ children }: { children: React.ReactNode }) {
   const level = useContext(LevelContext)
   return (
     <section className="section">
-      <LevelContext.Provider value={level + 1}>
-        {children}
-      </LevelContext.Provider>
+      {/* React 19 から Context.Provider が不要になった */}
+      <LevelContext value={level + 1}>{children}</LevelContext>
     </section>
   )
 }
