@@ -2,8 +2,6 @@ name: Dependabot automation
 
 on:
   pull_request:
-    types:
-      - opened
 
 jobs:
   dependabot-automation:
