@@ -21,7 +21,7 @@
     "react-dom": "19.0.0-rc.0",
     "react-helmet-async": "^2.0.5",
     "react-router-dom": "^6.21.1",
-    "uuid": "^9.0.1",
+    "uuid": "^10.0.0",
     "zustand": "^4.5.4"
   },
   "devDependencies": {
@@ -31,7 +31,7 @@
     "@types/react": "npm:types-react@rc",
     "@types/react-dom": "npm:types-react-dom@rc",
     "@types/react-helmet": "^6.1.11",
-    "@types/uuid": "^9.0.8",
+    "@types/uuid": "^10.0.0",
     "@typescript-eslint/eslint-plugin": "^6.0.0",
     "@typescript-eslint/parser": "^6.21.0",
     "@vitejs/plugin-react-swc": "^3.7.0",
