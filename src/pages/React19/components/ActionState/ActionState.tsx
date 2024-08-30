@@ -1,4 +1,4 @@
-import { useCallback, useActionState } from 'react'
+import { useActionState } from 'react'
 import { Button, Typography } from '@mui/material'
 import { Box } from '@mui/system'
 import { EquipmentTitle } from '~/components/domain/EquipmentTitle/EquipmentTitle'
@@ -9,10 +9,6 @@ export function ActionState() {
     return currentCount + 1
   }, 0)
 
-  const handleClick = useCallback(() => {
-    increment()
-  }, [increment])
-
   return (
     <Box
       sx={{
@@ -22,7 +18,7 @@ export function ActionState() {
       }}
     >
       <EquipmentTitle title="ActionState" />
-      <Box>
+      <Box component="form" action={increment}>
         <Typography
           variant="h6"
           sx={{
@@ -34,9 +30,10 @@ export function ActionState() {
           を使用する場合は、useActionState
           を使用することを検討する。useActionState は useTransition
           と異なり、dispatch 関数が連打された場合、前の dispatch
-          関数が完了してから次の dispatch 関数の実行が開始される。
+          関数が完了してから次の dispatch 関数の実行が開始される。 form action
+          呼び出された際に使用することができる。
         </Typography>
-        <Button variant="contained" onClick={handleClick}>
+        <Button variant="contained" type="submit">
           Increment
         </Button>
         {isPending ? (
