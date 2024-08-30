@@ -1,4 +1,4 @@
-import { useCallback, useActionState, useOptimistic } from 'react'
+import { useActionState, useOptimistic } from 'react'
 import { Button, Typography } from '@mui/material'
 import { Box } from '@mui/system'
 import { EquipmentTitle } from '~/components/domain/EquipmentTitle/EquipmentTitle'
@@ -18,13 +18,11 @@ export function UseOptimistic() {
     },
   )
 
-  const handleClick = useCallback(() => {
-    // increment に失敗した場合、戻す方法はどうする？
-    increment()
-  }, [increment])
-
   return (
     <Box
+      component="form"
+      // increment に失敗した場合、戻す方法はどうする？
+      action={increment}
       sx={{
         display: 'flex',
         flexDirection: 'column',
@@ -41,7 +39,7 @@ export function UseOptimistic() {
         >
           useOptimistic は 非同期な更新処理時に UI を楽観的更新するためのフック
         </Typography>
-        <Button variant="contained" onClick={handleClick}>
+        <Button variant="contained" type="submit">
           Increment
         </Button>
         <Typography>displayCount = {displayCount}</Typography>
