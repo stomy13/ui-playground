@@ -39,8 +39,8 @@ importers:
         specifier: ^6.28.0
         version: 6.28.0(react-dom@19.0.0-rc.0(react@19.0.0-rc.0))(react@19.0.0-rc.0)
       uuid:
-        specifier: ^11.0.2
-        version: 11.0.2
+        specifier: ^11.0.3
+        version: 11.0.3
       zustand:
         specifier: ^4.5.5
         version: 4.5.5(immer@10.1.1)(react@19.0.0-rc.0)(types-react@19.0.0-rc.0)
@@ -2140,8 +2140,8 @@ packages:
     peerDependencies:
       react: ^16.8.0 || ^17.0.0 || ^18.0.0
 
-  uuid@11.0.2:
-    resolution: {integrity: sha512-14FfcOJmqdjbBPdDjFQyk/SdT4NySW4eM0zcG+HqbHP5jzuH56xO3J1DGhgs/cEMCfwYi3HQI1gnTO62iaG+tQ==}
+  uuid@11.0.3:
+    resolution: {integrity: sha512-d0z310fCWv5dJwnX1Y/MncBAqGMKEzlBb1AOf7z9K8ALnd0utBX/msg/fA0+sbyN1ihbMsLhrBlnl1ak7Wa0rg==}
     hasBin: true
 
   vite-node@2.1.4:
@@ -4404,7 +4404,7 @@ snapshots:
     dependencies:
       react: 19.0.0-rc.0
 
-  uuid@11.0.2: {}
+  uuid@11.0.3: {}
 
   vite-node@2.1.4(@types/node@22.9.0):
     dependencies:
