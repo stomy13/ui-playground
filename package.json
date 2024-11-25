@@ -29,7 +29,7 @@
     "@playwright/test": "^1.49.0",
     "@tanstack/react-query": "^5.61.0",
     "@tanstack/react-query-devtools": "^5.61.0",
-    "@types/node": "^22.9.0",
+    "@types/node": "^22.9.3",
     "@types/react": "npm:types-react@rc",
     "@types/react-dom": "npm:types-react-dom@rc",
     "@types/react-helmet": "^6.1.11",
