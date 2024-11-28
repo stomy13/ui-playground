@@ -15,8 +15,8 @@ importers:
         specifier: ^11.13.0
         version: 11.13.0(@emotion/react@11.13.3(react@19.0.0-rc.1)(types-react@19.0.0-rc.0))(react@19.0.0-rc.1)(types-react@19.0.0-rc.0)
       '@mui/base':
-        specifier: 5.0.0-beta.61
-        version: 5.0.0-beta.61(react-dom@19.0.0-rc.1(react@19.0.0-rc.1))(react@19.0.0-rc.1)(types-react@19.0.0-rc.0)
+        specifier: 5.0.0-beta.63
+        version: 5.0.0-beta.63(react-dom@19.0.0-rc.1(react@19.0.0-rc.1))(react@19.0.0-rc.1)(types-react@19.0.0-rc.0)
       '@mui/icons-material':
         specifier: ^5.16.7
         version: 5.16.7(@mui/material@5.16.7(@emotion/react@11.13.3(react@19.0.0-rc.1)(types-react@19.0.0-rc.0))(@emotion/styled@11.13.0(@emotion/react@11.13.3(react@19.0.0-rc.1)(types-react@19.0.0-rc.0))(react@19.0.0-rc.1)(types-react@19.0.0-rc.0))(react-dom@19.0.0-rc.1(react@19.0.0-rc.1))(react@19.0.0-rc.1)(types-react@19.0.0-rc.0))(react@19.0.0-rc.1)(types-react@19.0.0-rc.0)
@@ -412,8 +412,8 @@ packages:
   '@jridgewell/sourcemap-codec@1.5.0':
     resolution: {integrity: sha512-gv3ZRaISU3fjPAgNsriBRqGWQL6quFx04YMPW/zD8XMLsU32mhCCbfbO6KZFLjvYpCZ8zyDEgqsgf+PwPaM7GQ==}
 
-  '@mui/base@5.0.0-beta.61':
-    resolution: {integrity: sha512-YaMOTXS3ecDNGsPKa6UdlJ8loFLvcL9+VbpCK3hfk71OaNauZRp4Yf7KeXDYr7Ms3M/XBD3SaiR6JMr6vYtfDg==}
+  '@mui/base@5.0.0-beta.63':
+    resolution: {integrity: sha512-W6aIqKP9X8VUX0KhSnYWo2+5C7MnKV1IhYVd517L/apvfkVq5KaTdlnxSBVwnaWt46whayVgQ/9KXwUVCXp6+w==}
     engines: {node: '>=14.0.0'}
     peerDependencies:
       '@types/react': ^17.0.0 || ^18.0.0
@@ -554,16 +554,6 @@ packages:
     peerDependencies:
       '@types/react': ^17.0.0 || ^18.0.0
       react: ^17.0.0 || ^18.0.0
-    peerDependenciesMeta:
-      '@types/react':
-        optional: true
-
-  '@mui/utils@6.1.6':
-    resolution: {integrity: sha512-sBS6D9mJECtELASLM+18WUcXF6RH3zNxBRFeyCRg8wad6NbyNrdxLuwK+Ikvc38sTZwBzAz691HmSofLqHd9sQ==}
-    engines: {node: '>=14.0.0'}
-    peerDependencies:
-      '@types/react': ^17.0.0 || ^18.0.0 || ^19.0.0
-      react: ^17.0.0 || ^18.0.0 || ^19.0.0
     peerDependenciesMeta:
       '@types/react':
         optional: true
@@ -2533,12 +2523,12 @@ snapshots:
 
   '@jridgewell/sourcemap-codec@1.5.0': {}
 
-  '@mui/base@5.0.0-beta.61(react-dom@19.0.0-rc.1(react@19.0.0-rc.1))(react@19.0.0-rc.1)(types-react@19.0.0-rc.0)':
+  '@mui/base@5.0.0-beta.63(react-dom@19.0.0-rc.1(react@19.0.0-rc.1))(react@19.0.0-rc.1)(types-react@19.0.0-rc.0)':
     dependencies:
       '@babel/runtime': 7.26.0
       '@floating-ui/react-dom': 2.1.1(react-dom@19.0.0-rc.1(react@19.0.0-rc.1))(react@19.0.0-rc.1)
       '@mui/types': 7.2.19(types-react@19.0.0-rc.0)
-      '@mui/utils': 6.1.6(react@19.0.0-rc.1)(types-react@19.0.0-rc.0)
+      '@mui/utils': 6.1.9(react@19.0.0-rc.1)(types-react@19.0.0-rc.0)
       '@popperjs/core': 2.11.8
       clsx: 2.1.1
       prop-types: 15.8.1
@@ -2661,18 +2651,6 @@ snapshots:
       '@types/react': types-react@19.0.0-rc.0
 
   '@mui/utils@5.16.6(react@19.0.0-rc.1)(types-react@19.0.0-rc.0)':
-    dependencies:
-      '@babel/runtime': 7.26.0
-      '@mui/types': 7.2.19(types-react@19.0.0-rc.0)
-      '@types/prop-types': 15.7.13
-      clsx: 2.1.1
-      prop-types: 15.8.1
-      react: 19.0.0-rc.1
-      react-is: 18.3.1
-    optionalDependencies:
-      '@types/react': types-react@19.0.0-rc.0
-
-  '@mui/utils@6.1.6(react@19.0.0-rc.1)(types-react@19.0.0-rc.0)':
     dependencies:
       '@babel/runtime': 7.26.0
       '@mui/types': 7.2.19(types-react@19.0.0-rc.0)
