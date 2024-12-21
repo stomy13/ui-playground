@@ -19,10 +19,15 @@ updates:
           - 'react-dom'
           - '@types/react'
           - '@types/react-dom'
-      tanstack:
+      tanstack-query:
         patterns:
           - '@tanstack/react-query'
           - '@tanstack/react-query-devtools'
+      tanstack-router:
+        patterns:
+          - '@tanstack/react-router'
+          - '@tanstack/router-devtools'
+          - '@tanstack/router-plugin'
       mui:
         patterns:
           - '@mui/material'
