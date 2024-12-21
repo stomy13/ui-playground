@@ -16,7 +16,8 @@
       "**/.vscode",
       "**/public",
       "**/pnpm-lock.yaml",
-      "**/package.json"
+      "**/package.json",
+      "**/node_modules"
     ]
   },
   "organizeImports": { "enabled": true },
@@ -104,7 +105,7 @@
         "useValidTypeof": "error"
       }
     },
-    "ignore": ["**/dist"]
+    "ignore": ["**/dist", "**/node_modules", "**/routeTree.gen.ts"]
   },
   "javascript": {
     "formatter": {

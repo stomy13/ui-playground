@@ -1,30 +1,29 @@
-import { useNavigate } from 'react-router-dom'
 import {
   CardActionArea,
-  CardMedia,
   CardContent,
+  CardMedia,
   Typography,
 } from '@mui/material'
-import { paths } from '~/app/routes/paths'
+import { useNavigate } from '@tanstack/react-router'
 import { Card } from '../Card/Card'
 
-export function React19Card() {
+export function HeartLaundryCard() {
   const navigate = useNavigate()
   return (
     <Card>
-      <CardActionArea onClick={() => navigate(paths.react19)}>
+      <CardActionArea onClick={() => navigate({ to: '/heartlaundry' })}>
         <CardMedia
           component="img"
           height="140"
-          image="/src/assets/react19.webp"
-          alt="react19"
+          image="https://img.freepik.com/free-photo/cute-kitten-staring-out-the-window-playful-curiosity-generative-ai_188544-12520.jpg"
+          alt="cat"
         />
         <CardContent>
           <Typography gutterBottom variant="h5" component="div">
-            React19🛠
+            Heart Laundry❤️🧺
           </Typography>
           <Typography variant="body2" color="text.secondary">
-            React19を使ってみましょう！
+            心の洗濯をしよう
           </Typography>
         </CardContent>
       </CardActionArea>

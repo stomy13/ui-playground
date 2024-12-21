@@ -1,30 +1,29 @@
-import { useNavigate } from 'react-router-dom'
 import {
   CardActionArea,
-  CardMedia,
   CardContent,
+  CardMedia,
   Typography,
 } from '@mui/material'
-import { paths } from '../../../../../app/routes/paths'
+import { useNavigate } from '@tanstack/react-router'
 import { Card } from '../Card/Card'
 
-export function PlaygroundCard() {
+export function React19Card() {
   const navigate = useNavigate()
   return (
     <Card>
-      <CardActionArea onClick={() => navigate(paths.playground)}>
+      <CardActionArea onClick={() => navigate({ to: '/react19' })}>
         <CardMedia
           component="img"
           height="140"
-          image="/src/assets/playground.webp"
-          alt="playground"
+          image="/src/assets/react19.webp"
+          alt="react19"
         />
         <CardContent>
           <Typography gutterBottom variant="h5" component="div">
-            Playground🛝
+            React19🛠
           </Typography>
           <Typography variant="body2" color="text.secondary">
-            遊び心を大切にしましょう！
+            React19を使ってみましょう！
           </Typography>
         </CardContent>
       </CardActionArea>

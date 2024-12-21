@@ -1,12 +1,14 @@
 /// <reference types="vitest" />
 import path from 'path'
-import react from '@vitejs/plugin-react-swc'
+import { TanStackRouterVite } from '@tanstack/router-plugin/vite'
+import viteReact from '@vitejs/plugin-react'
 import { defineConfig } from 'vite'
 import { configDefaults } from 'vitest/config'
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [react()],
+  // plugins: [TanStackRouterVite(), viteReact(), react()],
+  plugins: [TanStackRouterVite(), viteReact()],
   test: {
     includeSource: ['src/**/*.{js,ts}'],
     exclude: [...configDefaults.exclude, 'tests'],

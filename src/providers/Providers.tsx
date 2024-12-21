@@ -1,19 +1,22 @@
-import type { ReactNode } from 'react'
-import { BrowserRouter } from 'react-router-dom'
 import { ThemeProvider } from '@mui/material'
-import { HelmetProvider } from 'react-helmet-async'
+import { RouterProvider, createRouter } from '@tanstack/react-router'
+import { routeTree } from '~/routeTree.gen'
 import { theme } from '../styles/theme'
+import { PropsWithChildren } from 'react'
 
-type Props = {
-  children: ReactNode
+const router = createRouter({ routeTree })
+// Register the router instance for type safety
+declare module '@tanstack/react-router' {
+  interface Register {
+    router: typeof router
+  }
 }
 
-export function Providers({ children }: Props) {
+export function Providers({ children }: PropsWithChildren) {
   return (
     <ThemeProvider theme={theme}>
-      <HelmetProvider>
-        <BrowserRouter>{children}</BrowserRouter>
-      </HelmetProvider>
+      <RouterProvider router={router} />
+      {children}
     </ThemeProvider>
   )
 }

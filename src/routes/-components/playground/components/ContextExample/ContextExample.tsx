@@ -1,5 +1,5 @@
-import { useContext, createContext } from 'react'
-import { EquipmentTitle } from '../../../../components/feature/EquipmentTitle/EquipmentTitle'
+import { createContext, useContext } from 'react'
+import { EquipmentTitle } from '~/components/feature/EquipmentTitle/EquipmentTitle'
 import { EquipmentContainer } from '../EquipmentContainer/EquipmentContainer'
 
 export function ContextExample() {
