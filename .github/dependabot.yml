@@ -23,3 +23,8 @@ updates:
         patterns:
           - '@tanstack/react-query'
           - '@tanstack/react-query-devtools'
+      mui:
+        patterns:
+          - '@mui/material'
+          - '@mui/icons-material'
+          - '@mui/system'
