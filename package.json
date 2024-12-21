@@ -54,5 +54,12 @@
   "overrides": {
     "@types/react": "npm:types-react@rc",
     "@types/react-dom": "npm:types-react-dom@rc"
+  },
+  "volta": {
+    "node": "22.12.0"
+  },
+  "engines": {
+    "node": "22.12.0",
+    "pnpm": "9.15.1"
   }
 }
