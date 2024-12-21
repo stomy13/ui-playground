@@ -7,7 +7,7 @@ import { Snackbar } from '~/components/ui/Snackbar/Snackbar'
 export const Route = createRootRoute({
   component: () => (
     <>
-      <AppBar position="sticky">
+      <AppBar position="sticky" sx={{ backgroundColor: '#030303' }}>
         <Toolbar sx={{ gap: 2 }}>
           <AcUnitIcon />
           <Link to="/">
