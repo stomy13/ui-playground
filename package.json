@@ -7,6 +7,7 @@
     "dev": "vite",
     "build": "tsc && vite build",
     "lint": "biome lint src --write",
+    "format": "biome format src --write",
     "preview": "vite preview",
     "test": "vitest run",
     "test:ui": "playwright test"
@@ -37,7 +38,6 @@
     "@types/uuid": "^10.0.0",
     "@vitejs/plugin-react-swc": "^3.7.2",
     "immer": "^10.1.1",
-    "prettier": "^3.4.2",
     "typescript": "^5.7.2",
     "vite": "^6.0.4",
     "vitest": "^2.1.8"

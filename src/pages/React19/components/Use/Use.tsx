@@ -23,7 +23,8 @@ export function Use() {
             whiteSpace: 'pre-wrap',
           }}
         >
-          use は Suspense と一緒に使うフック。コンポーネント内から直接Promiseの中身を取り出せることができる。
+          use は Suspense
+          と一緒に使うフック。コンポーネント内から直接Promiseの中身を取り出せることができる。
         </Typography>
         <Button variant="contained" onClick={handleClick}>
           Toggle Visible
