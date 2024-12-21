@@ -1,3 +1,5 @@
+import AcUnitIcon from '@mui/icons-material/AcUnit'
+import { AppBar, Toolbar, Typography } from '@mui/material'
 import { Link, Outlet, createRootRoute } from '@tanstack/react-router'
 import { TanStackRouterDevtools } from '@tanstack/router-devtools'
 import { Snackbar } from '~/components/ui/Snackbar/Snackbar'
@@ -5,15 +7,17 @@ import { Snackbar } from '~/components/ui/Snackbar/Snackbar'
 export const Route = createRootRoute({
   component: () => (
     <>
-      <div className="p-2 flex gap-2">
-        <Link to="/" className="[&.active]:font-bold">
-          Home
-        </Link>{' '}
-        <Link to="/about" className="[&.active]:font-bold">
-          About
-        </Link>
-      </div>
-      <hr />
+      <AppBar position="sticky">
+        <Toolbar sx={{ gap: 2 }}>
+          <AcUnitIcon />
+          <Link to="/">
+            <Typography>Home</Typography>
+          </Link>
+          <Link to="/about">
+            <Typography>About</Typography>
+          </Link>
+        </Toolbar>
+      </AppBar>
       <Outlet />
       <Snackbar />
       <TanStackRouterDevtools />

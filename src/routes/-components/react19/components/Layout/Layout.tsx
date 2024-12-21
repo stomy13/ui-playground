@@ -17,6 +17,7 @@ export const Layout = ({ children }: LayoutProps) => {
           display: 'flex',
           flexDirection: 'column',
           gap: 2,
+          maxWidth: '1000px',
         }}
       >
         {children}
