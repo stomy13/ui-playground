@@ -12,7 +12,7 @@ export function Transition() {
       await new Promise(resolve => setTimeout(resolve, 1000))
       setCount(prev => prev + 1)
     })
-  }, [startTransition])
+  }, [])
 
   return (
     <Box
