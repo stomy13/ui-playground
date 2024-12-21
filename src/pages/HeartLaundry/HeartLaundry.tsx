@@ -1,6 +1,6 @@
 import { Box, Button, Stack } from '@mui/material'
-import { MainLayout } from '../../components/mainLayout/MainLayout'
-import { TextareaAutosize } from '../../components/textArea/TextArea'
+import { MainLayout } from '../../components/layout/MainLayout/MainLayout'
+import { TextareaAutosize } from '../../components/ui/textArea/TextArea'
 
 export function HeartLaundry() {
   return (

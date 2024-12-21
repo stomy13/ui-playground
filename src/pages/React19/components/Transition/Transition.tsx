@@ -1,7 +1,7 @@
 import { useState, useTransition, useCallback } from 'react'
 import { Button, Typography } from '@mui/material'
 import { Box } from '@mui/system'
-import { EquipmentTitle } from '~/components/domain/EquipmentTitle/EquipmentTitle'
+import { EquipmentTitle } from '~/components/feature/EquipmentTitle/EquipmentTitle'
 
 export function Transition() {
   const [count, setCount] = useState(0)

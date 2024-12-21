@@ -1,6 +1,6 @@
 import { Button, Typography } from '@mui/material'
 import { Box } from '@mui/system'
-import { useSnackbar } from '~/components/global/Snackbar/hooks/useSnackbar'
+import { useSnackbar } from '~/components/ui/Snackbar/hooks/useSnackbar'
 import { useIndexedDB } from './hooks/useIndexedDB'
 
 export function IndexedDB() {

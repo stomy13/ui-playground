@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { EquipmentTitle } from '../../../../components/domain/EquipmentTitle/EquipmentTitle'
+import { EquipmentTitle } from '../../../../components/feature/EquipmentTitle/EquipmentTitle'
 import { EquipmentContainer } from '../EquipmentContainer/EquipmentContainer'
 
 export function UpdateStateQueue() {

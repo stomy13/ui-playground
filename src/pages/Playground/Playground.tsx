@@ -1,7 +1,7 @@
 import { Typography } from '@mui/material'
 import { Box } from '@mui/system'
 import { Helmet } from 'react-helmet-async'
-import { MainLayout } from '../../components/mainLayout/MainLayout'
+import { MainLayout } from '../../components/layout/MainLayout/MainLayout'
 import { ClientSideStorage } from './components/ClientSideStorage/ClientSideStorage'
 import { ContextExample } from './components/ContextExample/ContextExample'
 import { ScrollRefExample } from './components/ScrollRefExample/ ScrollRefExample '

@@ -1,7 +1,7 @@
 import { Suspense, useState } from 'react'
 import { Button, Typography } from '@mui/material'
 import { Box } from '@mui/system'
-import { EquipmentTitle } from '~/components/domain/EquipmentTitle/EquipmentTitle'
+import { EquipmentTitle } from '~/components/feature/EquipmentTitle/EquipmentTitle'
 import { ShowCount } from './ShowCount'
 
 export function Use() {
