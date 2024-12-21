@@ -17,11 +17,11 @@ export function Routes() {
     },
     {
       path: paths.playground,
-      element: <Playground pageTitle="Playground" />,
+      element: <Playground />,
     },
     {
       path: paths.react19,
-      element: <React19 pageTitle="React 19" />,
+      element: <React19 />,
     },
   ])
   return routes

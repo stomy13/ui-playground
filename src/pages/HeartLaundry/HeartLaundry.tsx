@@ -1,10 +1,12 @@
 import { Box, Button, Stack } from '@mui/material'
+import { Helmet } from '../../components/layout/Helmet/Helmet'
 import { MainLayout } from '../../components/layout/MainLayout/MainLayout'
 import { TextareaAutosize } from '../../components/ui/TextArea/TextArea'
 
 export function HeartLaundry() {
   return (
     <MainLayout>
+      <Helmet title="Heart Laundry" />
       <Box
         sx={{
           display: 'flex',

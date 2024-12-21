@@ -7,16 +7,10 @@ import { Transition } from './components/Transition/Transition'
 import { Use } from './components/Use/Use'
 import { UseOptimistic } from './components/UseOptimistic/UseOptimistic'
 
-type Props = {
-  pageTitle: string
-}
-
-export function React19({ pageTitle }: Props) {
+export function React19() {
   return (
     <Layout>
-      <Helmet>
-        <title>{pageTitle}</title>
-      </Helmet>
+      <Helmet title="React 19" />
       <Typography variant="h4">React 19</Typography>
       <Transition />
       <ActionState />

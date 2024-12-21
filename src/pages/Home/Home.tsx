@@ -3,10 +3,12 @@ import { HeartLaundryCard } from './components/Card/HeartLaundryCard/HeartLaundr
 import { PlaygroundCard } from './components/Card/PlaygroundCard/PlaygroundCard'
 import { React19Card } from './components/Card/Raect19Card/Raect19Card'
 import { Layout } from './components/Layout/Layout'
+import { Helmet } from '../../components/layout/Helmet/Helmet'
 
 export function Home() {
   return (
     <MainLayout>
+      <Helmet title={'Home'} />
       <Layout>
         <PlaygroundCard />
         <HeartLaundryCard />
