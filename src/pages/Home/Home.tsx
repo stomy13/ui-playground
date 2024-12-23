@@ -1,9 +1,9 @@
 import { Helmet } from '~/components/layout/Helmet/Helmet'
 import { MainLayout } from '~/components/layout/MainLayout/MainLayout'
-import { HeartLaundryCard } from './Card/HeartLaundryCard/HeartLaundryCard'
-import { PlaygroundCard } from './Card/PlaygroundCard/PlaygroundCard'
-import { React19Card } from './Card/Raect19Card/Raect19Card'
-import { Layout } from './Layout/Layout'
+import { HeartLaundryCard } from './components/Card/HeartLaundryCard/HeartLaundryCard'
+import { PlaygroundCard } from './components/Card/PlaygroundCard/PlaygroundCard'
+import { React19Card } from './components/Card/Raect19Card/Raect19Card'
+import { Layout } from './components/Layout/Layout'
 
 export function Home() {
   return (
