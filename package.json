@@ -19,7 +19,7 @@
     "@mui/icons-material": "^6.2.1",
     "@mui/material": "^6.2.1",
     "@mui/system": "^6.2.1",
-    "@tanstack/react-router": "^1.92.1",
+    "@tanstack/react-router": "^1.92.3",
     "react": "19.0.0",
     "react-dom": "19.0.0",
     "uuid": "^11.0.3",
@@ -28,7 +28,7 @@
   "devDependencies": {
     "@biomejs/biome": "1.9.4",
     "@playwright/test": "^1.49.1",
-    "@tanstack/router-devtools": "^1.92.1",
+    "@tanstack/router-devtools": "^1.92.3",
     "@tanstack/router-plugin": "^1.91.1",
     "@types/node": "^22.10.2",
     "@types/react": "19.0.2",
