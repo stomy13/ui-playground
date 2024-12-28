@@ -1,7 +1,8 @@
-import { useState, useTransition, useCallback } from 'react'
-import { Button, Typography } from '@mui/material'
+import { Typography } from '@mui/material'
 import { Box } from '@mui/system'
+import { useCallback, useState, useTransition } from 'react'
 import { EquipmentTitle } from '~/components/feature/EquipmentTitle/EquipmentTitle'
+import { LoadingButton } from '~/components/ui/LoadingButton/LoadingButton'
 
 export function Transition() {
   const [count, setCount] = useState(0)
@@ -32,14 +33,15 @@ export function Transition() {
         >
           useTransition に非同期関数（a.k.a Actions）を渡せるようになった
         </Typography>
-        <Button variant="contained" onClick={handleClick}>
+
+        <LoadingButton
+          isLoading={isPending}
+          variant="contained"
+          onClick={handleClick}
+        >
           Increment
-        </Button>
-        {isPending ? (
-          <Typography>loading...</Typography>
-        ) : (
-          <Typography>count = {count}</Typography>
-        )}
+        </LoadingButton>
+        <Typography>{isPending ? 'loading...' : `count = ${count}`}</Typography>
       </Box>
     </Box>
   )
