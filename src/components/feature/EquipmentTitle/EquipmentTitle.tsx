@@ -2,7 +2,7 @@ import AutoAwesomeIcon from '@mui/icons-material/AutoAwesome'
 import { Typography } from '@mui/material'
 import { Box } from '@mui/system'
 import { aero } from '../../../styles/colors'
-import { ReactNode } from 'react'
+import type { ReactNode } from 'react'
 
 type Props = {
   title: string

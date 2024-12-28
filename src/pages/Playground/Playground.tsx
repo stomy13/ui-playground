@@ -4,7 +4,7 @@ import { Helmet } from '~/components/layout/Helmet/Helmet'
 import { MainLayout } from '~/components/layout/MainLayout/MainLayout'
 import { ClientSideStorage } from './components/ClientSideStorage/ClientSideStorage'
 import { ContextExample } from './components/ContextExample/ContextExample'
-import { ScrollRefExample } from './components/ScrollRefExample/ ScrollRefExample '
+import { ScrollRefExample } from './components/ScrollRefExample/ ScrollRefExample'
 import { UpdateStateQueue } from './components/UpdateStateQueue/UpdateStateQueue'
 
 export function Playground() {

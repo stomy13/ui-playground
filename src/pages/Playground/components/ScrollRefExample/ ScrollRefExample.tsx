@@ -1,4 +1,5 @@
 import ShortcutIcon from '@mui/icons-material/Shortcut'
+import { Button } from '@mui/material'
 import { Box } from '@mui/system'
 import { useRef } from 'react'
 import { EquipmentTitle } from '~/components/feature/EquipmentTitle/EquipmentTitle'
@@ -46,9 +47,9 @@ export function ScrollRefExample() {
     <>
       <EquipmentTitle title="Scroll Ref" icon={<ShortcutIcon />} />
       <nav>
-        <button onClick={() => scrollToId(0)}>1番目</button>
-        <button onClick={() => scrollToId(5)}>6番目</button>
-        <button onClick={() => scrollToId(9)}>10番目</button>
+        <Button onClick={() => scrollToId(0)}>1番目</Button>
+        <Button onClick={() => scrollToId(5)}>6番目</Button>
+        <Button onClick={() => scrollToId(9)}>10番目</Button>
       </nav>
       <Box
         sx={{
@@ -79,7 +80,7 @@ export function ScrollRefExample() {
           >
             <img
               src={cat.imageUrl}
-              alt={'Cat #' + cat.id}
+              alt={`Cat #${cat.id}`}
               style={{
                 width: 'auto',
                 height: '200px',

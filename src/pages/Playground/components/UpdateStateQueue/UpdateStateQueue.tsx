@@ -1,6 +1,7 @@
 import { useState } from 'react'
-import { EquipmentContainer } from '../EquipmentContainer/EquipmentContainer'
 import { EquipmentTitle } from '~/components/feature/EquipmentTitle/EquipmentTitle'
+import { EquipmentContainer } from '../EquipmentContainer/EquipmentContainer'
+import { Button } from '@mui/material'
 
 export function UpdateStateQueue() {
   const [index, setIndex] = useState(0)
@@ -15,7 +16,7 @@ export function UpdateStateQueue() {
 
   return (
     <EquipmentContainer title={<EquipmentTitle title="Update State Queue" />}>
-      <button onClick={handleClick}>Next {index + 1}</button>
+      <Button onClick={handleClick}>Next {index + 1}</Button>
     </EquipmentContainer>
   )
 }

@@ -2,7 +2,7 @@ import { ThemeProvider } from '@mui/material'
 import { RouterProvider, createRouter } from '@tanstack/react-router'
 import { routeTree } from '~/routeTree.gen'
 import { theme } from '../styles/theme'
-import { PropsWithChildren } from 'react'
+import type { PropsWithChildren } from 'react'
 
 const router = createRouter({ routeTree })
 // Register the router instance for type safety

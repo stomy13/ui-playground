@@ -1,6 +1,6 @@
-import { useState } from 'react'
 import { Button, Typography } from '@mui/material'
 import { Box } from '@mui/system'
+import { useState } from 'react'
 import { useSnackbar } from '~/components/ui/Snackbar/hooks/useSnackbar'
 import type { UseWebStorageFunc } from '../../hooks/useWebStorage'
 
@@ -34,7 +34,7 @@ export function WebStorage({ description, useStorage }: Props) {
         <Button
           variant="contained"
           onClick={() => {
-            setItem('name', 'John ' + count)
+            setItem('name', `John ${count}`)
             setCount(prev => prev + 1)
           }}
         >

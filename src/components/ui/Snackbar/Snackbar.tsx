@@ -13,7 +13,7 @@ export function Snackbar() {
           horizontal: 'right',
         }
       }
-      open={message != undefined}
+      open={message != null}
       onClose={hideMessage}
       key={message?.key}
       autoHideDuration={5000}

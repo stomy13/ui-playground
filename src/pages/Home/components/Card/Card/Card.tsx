@@ -1,5 +1,5 @@
 import MuiCard from '@mui/material/Card'
-import { ReactNode } from 'react'
+import type { ReactNode } from 'react'
 
 type Props = {
   children: ReactNode

@@ -1,4 +1,4 @@
-import { ReactNode, createContext, useContext } from 'react'
+import { type ReactNode, createContext, useContext } from 'react'
 import { EquipmentTitle } from '~/components/feature/EquipmentTitle/EquipmentTitle'
 import { EquipmentContainer } from '../EquipmentContainer/EquipmentContainer'
 
@@ -49,7 +49,7 @@ export function Heading({ children }: { children: ReactNode }) {
     case 6:
       return <h6>{children}</h6>
     default:
-      throw Error('Unknown level: ' + level)
+      throw Error(`Unknown level: ${level}`)
   }
 }
 

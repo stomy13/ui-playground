@@ -1,5 +1,5 @@
-import { Button, ButtonProps, CircularProgress } from '@mui/material'
-import { PropsWithChildren, useCallback, useState } from 'react'
+import { Button, type ButtonProps, CircularProgress } from '@mui/material'
+import { type PropsWithChildren, useCallback, useState } from 'react'
 
 type Props = {
   isLoading: boolean
