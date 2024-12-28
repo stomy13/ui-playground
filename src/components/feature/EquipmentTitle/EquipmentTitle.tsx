@@ -2,10 +2,11 @@ import AutoAwesomeIcon from '@mui/icons-material/AutoAwesome'
 import { Typography } from '@mui/material'
 import { Box } from '@mui/system'
 import { aero } from '../../../styles/colors'
+import { ReactNode } from 'react'
 
 type Props = {
   title: string
-  icon?: React.ReactNode
+  icon?: ReactNode
 }
 
 export function EquipmentTitle({ title, icon }: Props) {

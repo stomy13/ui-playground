@@ -1,8 +1,9 @@
 import { Box } from '@mui/system'
+import { ReactNode } from 'react'
 
 type Props = {
-  title: React.ReactNode
-  children: React.ReactNode
+  title: ReactNode
+  children: ReactNode
 }
 
 export function EquipmentContainer({ title, children }: Props) {

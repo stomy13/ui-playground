@@ -1,46 +1,44 @@
-import { useEffect } from "react";
+import { FC, useEffect } from 'react'
 
 interface HelmetProps {
-  title?: string;
-  description?: string;
-  keywords?: string;
+  title?: string
+  description?: string
+  keywords?: string
 }
 
-export const Helmet: React.FC<HelmetProps> = ({ title, description, keywords }) => {
+export const Helmet: FC<HelmetProps> = ({ title, description, keywords }) => {
   useEffect(() => {
     // Set document title if provided
     if (title) {
-      document.title = title;
+      document.title = title
     }
 
     // Set meta description if provided
     if (description) {
-      let metaDescription = document.querySelector('meta[name="description"]');
+      let metaDescription = document.querySelector('meta[name="description"]')
 
       if (!metaDescription) {
-        metaDescription = document.createElement("meta");
+        metaDescription = document.createElement('meta')
+        ;(metaDescription as HTMLMetaElement).name = 'description'
 
-        (metaDescription as HTMLMetaElement).name = "description";
-
-        document.head.appendChild(metaDescription);
+        document.head.appendChild(metaDescription)
       }
-      (metaDescription as HTMLMetaElement).content = description;
+      ;(metaDescription as HTMLMetaElement).content = description
     }
 
     // Set meta keywords if provided
     if (keywords) {
-      let metaKeywords = document.querySelector('meta[name="keywords"]');
+      let metaKeywords = document.querySelector('meta[name="keywords"]')
 
       if (!metaKeywords) {
-        metaKeywords = document.createElement("meta");
+        metaKeywords = document.createElement('meta')
+        ;(metaKeywords as HTMLMetaElement).name = 'keywords'
 
-        (metaKeywords as HTMLMetaElement).name = "keywords";
-
-        document.head.appendChild(metaKeywords);
+        document.head.appendChild(metaKeywords)
       }
-      (metaKeywords as HTMLMetaElement).content = keywords;
+      ;(metaKeywords as HTMLMetaElement).content = keywords
     }
-  }, [title, description, keywords]);
+  }, [title, description, keywords])
 
-  return null; // This component does not render any visible UI
-};
+  return null // This component does not render any visible UI
+}

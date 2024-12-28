@@ -1,4 +1,4 @@
-import { createContext, useContext } from 'react'
+import { ReactNode, createContext, useContext } from 'react'
 import { EquipmentTitle } from '~/components/feature/EquipmentTitle/EquipmentTitle'
 import { EquipmentContainer } from '../EquipmentContainer/EquipmentContainer'
 
@@ -21,7 +21,7 @@ export function ContextExample() {
     </EquipmentContainer>
   )
 }
-export function Section({ children }: { children: React.ReactNode }) {
+export function Section({ children }: { children: ReactNode }) {
   const level = useContext(LevelContext)
   return (
     <section className="section">
@@ -31,7 +31,7 @@ export function Section({ children }: { children: React.ReactNode }) {
   )
 }
 
-export function Heading({ children }: { children: React.ReactNode }) {
+export function Heading({ children }: { children: ReactNode }) {
   const level = useContext(LevelContext)
   switch (level) {
     case 0:

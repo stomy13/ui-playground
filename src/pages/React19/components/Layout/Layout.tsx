@@ -1,7 +1,8 @@
 import { Box } from '@mui/system'
+import { ReactNode } from 'react'
 
 type LayoutProps = {
-  children: React.ReactNode
+  children: ReactNode
 }
 
 export const Layout = ({ children }: LayoutProps) => {
