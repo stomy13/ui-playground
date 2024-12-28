@@ -14,6 +14,6 @@ jobs:
         with:
           node-version-file: 'package.json'
       - name: Install dependencies
-        run: npm install -g pnpm@9.15.1 && pnpm install
+        run: npm install -g pnpm@10.0.0-alpha.4 && pnpm install
       - name: Run tests
         run: pnpm test
