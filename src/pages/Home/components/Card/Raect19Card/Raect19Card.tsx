@@ -15,7 +15,7 @@ export function React19Card() {
         <CardMedia
           component="img"
           height="140"
-          image="/src/assets/react19.webp"
+          image="/react19.webp"
           alt="react19"
         />
         <CardContent>

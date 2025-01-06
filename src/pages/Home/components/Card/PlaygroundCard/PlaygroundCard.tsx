@@ -15,7 +15,7 @@ export function PlaygroundCard() {
         <CardMedia
           component="img"
           height="140"
-          image="/src/assets/playground.webp"
+          image="/playground.webp"
           alt="playground"
         />
         <CardContent>
