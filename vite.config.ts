@@ -9,6 +9,7 @@ import { configDefaults } from 'vitest/config'
 export default defineConfig({
   // plugins: [TanStackRouterVite(), viteReact(), react()],
   plugins: [TanStackRouterVite(), viteReact()],
+  base: '/ui-playground/',
   test: {
     includeSource: ['src/**/*.{js,ts}'],
     exclude: [...configDefaults.exclude, 'tests'],

@@ -5,7 +5,10 @@ import {
   Typography,
 } from '@mui/material'
 import { useNavigate } from '@tanstack/react-router'
+import { getBaseUrl } from '~/config/url'
 import { Card } from '../Card/Card'
+
+const imageUrl = `${getBaseUrl()}/react19.webp`
 
 export function React19Card() {
   const navigate = useNavigate()
@@ -15,7 +18,7 @@ export function React19Card() {
         <CardMedia
           component="img"
           height="140"
-          image="/react19.webp"
+          image={imageUrl}
           alt="react19"
         />
         <CardContent>

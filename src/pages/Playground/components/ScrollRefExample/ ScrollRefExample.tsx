@@ -3,6 +3,7 @@ import { Button } from '@mui/material'
 import { Box } from '@mui/system'
 import { useRef } from 'react'
 import { EquipmentTitle } from '~/components/feature/EquipmentTitle/EquipmentTitle'
+import { getBaseUrl } from '~/config/url'
 type Cat = {
   id: number
   imageUrl: string
@@ -13,7 +14,7 @@ function makeCatList(): Cat[] {
   for (let i = 0; i < 11; i++) {
     catList.push({
       id: i,
-      imageUrl: `/cats/cat_${String(i + 1).padStart(2, '0')}.jpg`,
+      imageUrl: `${getBaseUrl()}/cats/cat_${String(i + 1).padStart(2, '0')}.jpg`,
     })
   }
   return catList

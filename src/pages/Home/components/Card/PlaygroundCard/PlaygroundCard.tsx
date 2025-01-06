@@ -1,11 +1,14 @@
 import {
+  Card,
   CardActionArea,
   CardContent,
   CardMedia,
   Typography,
 } from '@mui/material'
 import { useNavigate } from '@tanstack/react-router'
-import { Card } from '../Card/Card'
+import { getBaseUrl } from '~/config/url'
+
+const imageUrl = `${getBaseUrl()}/playground.webp`
 
 export function PlaygroundCard() {
   const navigate = useNavigate()
@@ -15,7 +18,7 @@ export function PlaygroundCard() {
         <CardMedia
           component="img"
           height="140"
-          image="/playground.webp"
+          image={imageUrl}
           alt="playground"
         />
         <CardContent>
