@@ -2,6 +2,7 @@
   "name": "ui-playground",
   "private": true,
   "version": "0.0.0",
+  "homepage": "https://stomy13.github.io/ui-playground",
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -10,7 +11,9 @@
     "format": "biome format src --write",
     "preview": "vite preview",
     "test": "vitest run",
-    "test:ui": "playwright test"
+    "test:ui": "playwright test",
+    "predeploy": "pnpm run build",
+    "deploy": "gh-pages -d dist"
   },
   "dependencies": {
     "@emotion/react": "^11.14.0",
@@ -36,6 +39,7 @@
     "@types/uuid": "^10.0.0",
     "@vitejs/plugin-react": "^4.3.4",
     "@vitejs/plugin-react-swc": "^3.7.2",
+    "gh-pages": "^6.3.0",
     "immer": "^10.1.1",
     "typescript": "^5.7.2",
     "vite": "^6.0.6",
