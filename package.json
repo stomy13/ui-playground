@@ -5,7 +5,7 @@
   "homepage": "https://stomy13.github.io/ui-playground",
   "type": "module",
   "scripts": {
-    "dev": "vite",
+    "dev": "vite dev",
     "build": "tsc && vite build",
     "lint": "biome lint src --write",
     "format": "biome format src --write",

@@ -3,7 +3,8 @@ import { Button } from '@mui/material'
 import { Box } from '@mui/system'
 import { useRef } from 'react'
 import { EquipmentTitle } from '~/components/feature/EquipmentTitle/EquipmentTitle'
-import { getBaseUrl } from '~/config/url'
+import { getBaseUrl } from '~/config'
+
 type Cat = {
   id: number
   imageUrl: string

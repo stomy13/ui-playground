@@ -5,8 +5,8 @@ import {
   Typography,
 } from '@mui/material'
 import { useNavigate } from '@tanstack/react-router'
-import { getBaseUrl } from '~/config/url'
 import { Card } from '../Card/Card'
+import { getBaseUrl } from '~/config'
 
 const imageUrl = `${getBaseUrl()}/react19.webp`
 

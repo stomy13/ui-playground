@@ -3,6 +3,7 @@ import { AppBar, Toolbar, Typography } from '@mui/material'
 import { Link, Outlet, createRootRoute } from '@tanstack/react-router'
 import { TanStackRouterDevtools } from '@tanstack/router-devtools'
 import { Snackbar } from '~/components/ui/Snackbar/Snackbar'
+import { appEnv } from '~/config'
 
 export const Route = createRootRoute({
   component: () => (
@@ -20,7 +21,7 @@ export const Route = createRootRoute({
       </AppBar>
       <Outlet />
       <Snackbar />
-      <TanStackRouterDevtools />
+      {appEnv.isLocal && <TanStackRouterDevtools />}
     </>
   ),
 })

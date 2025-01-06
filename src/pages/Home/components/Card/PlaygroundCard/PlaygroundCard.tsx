@@ -6,7 +6,7 @@ import {
   Typography,
 } from '@mui/material'
 import { useNavigate } from '@tanstack/react-router'
-import { getBaseUrl } from '~/config/url'
+import { getBaseUrl } from '~/config'
 
 const imageUrl = `${getBaseUrl()}/playground.webp`
 
