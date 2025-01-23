@@ -33,7 +33,7 @@
     "@playwright/test": "^1.49.1",
     "@tanstack/router-devtools": "^1.97.14",
     "@tanstack/router-plugin": "^1.97.14",
-    "@types/node": "^22.10.2",
+    "@types/node": "^22.10.7",
     "@types/react": "19.0.7",
     "@types/react-dom": "19.0.3",
     "@types/uuid": "^10.0.0",
