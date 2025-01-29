@@ -17,6 +17,7 @@ import { Route as rootRoute } from './routes/__root'
 // Create Virtual Routes
 
 const React19LazyImport = createFileRoute('/react19')()
+const ProxyLazyImport = createFileRoute('/proxy')()
 const PlaygroundLazyImport = createFileRoute('/playground')()
 const HeartlaundryLazyImport = createFileRoute('/heartlaundry')()
 const AboutLazyImport = createFileRoute('/about')()
@@ -29,6 +30,12 @@ const React19LazyRoute = React19LazyImport.update({
   path: '/react19',
   getParentRoute: () => rootRoute,
 } as any).lazy(() => import('./routes/react19.lazy').then(d => d.Route))
+
+const ProxyLazyRoute = ProxyLazyImport.update({
+  id: '/proxy',
+  path: '/proxy',
+  getParentRoute: () => rootRoute,
+} as any).lazy(() => import('./routes/proxy.lazy').then(d => d.Route))
 
 const PlaygroundLazyRoute = PlaygroundLazyImport.update({
   id: '/playground',
@@ -86,6 +93,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof PlaygroundLazyImport
       parentRoute: typeof rootRoute
     }
+    '/proxy': {
+      id: '/proxy'
+      path: '/proxy'
+      fullPath: '/proxy'
+      preLoaderRoute: typeof ProxyLazyImport
+      parentRoute: typeof rootRoute
+    }
     '/react19': {
       id: '/react19'
       path: '/react19'
@@ -103,6 +117,7 @@ export interface FileRoutesByFullPath {
   '/about': typeof AboutLazyRoute
   '/heartlaundry': typeof HeartlaundryLazyRoute
   '/playground': typeof PlaygroundLazyRoute
+  '/proxy': typeof ProxyLazyRoute
   '/react19': typeof React19LazyRoute
 }
 
@@ -111,6 +126,7 @@ export interface FileRoutesByTo {
   '/about': typeof AboutLazyRoute
   '/heartlaundry': typeof HeartlaundryLazyRoute
   '/playground': typeof PlaygroundLazyRoute
+  '/proxy': typeof ProxyLazyRoute
   '/react19': typeof React19LazyRoute
 }
 
@@ -120,15 +136,29 @@ export interface FileRoutesById {
   '/about': typeof AboutLazyRoute
   '/heartlaundry': typeof HeartlaundryLazyRoute
   '/playground': typeof PlaygroundLazyRoute
+  '/proxy': typeof ProxyLazyRoute
   '/react19': typeof React19LazyRoute
 }
 
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/about' | '/heartlaundry' | '/playground' | '/react19'
+  fullPaths:
+    | '/'
+    | '/about'
+    | '/heartlaundry'
+    | '/playground'
+    | '/proxy'
+    | '/react19'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/about' | '/heartlaundry' | '/playground' | '/react19'
-  id: '__root__' | '/' | '/about' | '/heartlaundry' | '/playground' | '/react19'
+  to: '/' | '/about' | '/heartlaundry' | '/playground' | '/proxy' | '/react19'
+  id:
+    | '__root__'
+    | '/'
+    | '/about'
+    | '/heartlaundry'
+    | '/playground'
+    | '/proxy'
+    | '/react19'
   fileRoutesById: FileRoutesById
 }
 
@@ -137,6 +167,7 @@ export interface RootRouteChildren {
   AboutLazyRoute: typeof AboutLazyRoute
   HeartlaundryLazyRoute: typeof HeartlaundryLazyRoute
   PlaygroundLazyRoute: typeof PlaygroundLazyRoute
+  ProxyLazyRoute: typeof ProxyLazyRoute
   React19LazyRoute: typeof React19LazyRoute
 }
 
@@ -145,6 +176,7 @@ const rootRouteChildren: RootRouteChildren = {
   AboutLazyRoute: AboutLazyRoute,
   HeartlaundryLazyRoute: HeartlaundryLazyRoute,
   PlaygroundLazyRoute: PlaygroundLazyRoute,
+  ProxyLazyRoute: ProxyLazyRoute,
   React19LazyRoute: React19LazyRoute,
 }
 
@@ -162,6 +194,7 @@ export const routeTree = rootRoute
         "/about",
         "/heartlaundry",
         "/playground",
+        "/proxy",
         "/react19"
       ]
     },
@@ -176,6 +209,9 @@ export const routeTree = rootRoute
     },
     "/playground": {
       "filePath": "playground.lazy.tsx"
+    },
+    "/proxy": {
+      "filePath": "proxy.lazy.tsx"
     },
     "/react19": {
       "filePath": "react19.lazy.tsx"
