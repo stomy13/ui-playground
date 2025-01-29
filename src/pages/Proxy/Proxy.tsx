@@ -4,7 +4,7 @@ import { Helmet } from '~/components/layout/Helmet/Helmet'
 export function ProxyComponent() {
   return (
     <CenterizedLayout>
-      <Helmet title="Playground" />
+      <Helmet title="Proxy" />
       <div>
         <h1>Proxy</h1>
         <p>Proxy page</p>
