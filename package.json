@@ -18,21 +18,20 @@
   "dependencies": {
     "@emotion/react": "^11.14.0",
     "@emotion/styled": "^11.14.0",
-    "@mui/base": "5.0.0-beta.68",
     "@mui/icons-material": "^6.4.3",
     "@mui/material": "^6.4.3",
     "@mui/system": "^6.4.3",
-    "@tanstack/react-router": "^1.99.0",
+    "@tanstack/react-router": "^1.99.6",
     "react": "19.0.0",
     "react-dom": "19.0.0",
     "uuid": "^11.0.5",
-    "zustand": "^5.0.2"
+    "zustand": "^5.0.3"
   },
   "devDependencies": {
     "@biomejs/biome": "1.9.4",
     "@playwright/test": "^1.50.1",
-    "@tanstack/router-devtools": "^1.99.0",
-    "@tanstack/router-plugin": "^1.99.3",
+    "@tanstack/router-devtools": "^1.99.6",
+    "@tanstack/router-plugin": "^1.99.6",
     "@types/node": "^22.13.1",
     "@types/react": "19.0.8",
     "@types/react-dom": "19.0.3",
@@ -43,8 +42,8 @@
     "immer": "^10.1.1",
     "pnpm": "10.2.0",
     "typescript": "^5.7.3",
-    "vite": "^6.0.11",
-    "vitest": "^2.1.8"
+    "vite": "^6.1.0",
+    "vitest": "^3.0.5"
   },
   "packageManager": "pnpm@10.2.0",
   "volta": {
