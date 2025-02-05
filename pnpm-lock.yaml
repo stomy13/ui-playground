@@ -78,6 +78,9 @@ importers:
       immer:
         specifier: ^10.1.1
         version: 10.1.1
+      pnpm:
+        specifier: 10.2.0
+        version: 10.2.0
       typescript:
         specifier: ^5.7.3
         version: 5.7.3
@@ -1653,6 +1656,11 @@ packages:
   playwright@1.50.1:
     resolution: {integrity: sha512-G8rwsOQJ63XG6BbKj2w5rHeavFjy5zynBA9zsJMMtBoe/Uf757oG12NXz6e6OirF7RCrTVAKFXbLmn1RbL7Qaw==}
     engines: {node: '>=18'}
+    hasBin: true
+
+  pnpm@10.2.0:
+    resolution: {integrity: sha512-DSc2TgE5xqre7WWtoVMTXgypbI2kISO9UAR/lhM53Hp1j8LpRLQo9SvlcNG9M3JFXBxl+i56oL+/kxGQ+VUgAQ==}
+    engines: {node: '>=18.12'}
     hasBin: true
 
   postcss@8.5.1:
@@ -3369,6 +3377,8 @@ snapshots:
       playwright-core: 1.50.1
     optionalDependencies:
       fsevents: 2.3.2
+
+  pnpm@10.2.0: {}
 
   postcss@8.5.1:
     dependencies:
