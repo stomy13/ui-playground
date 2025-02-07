@@ -76,8 +76,8 @@ importers:
         specifier: ^10.1.1
         version: 10.1.1
       pnpm:
-        specifier: 10.2.0
-        version: 10.2.0
+        specifier: 10.2.1
+        version: 10.2.1
       typescript:
         specifier: ^5.7.3
         version: 5.7.3
@@ -1444,8 +1444,8 @@ packages:
     engines: {node: '>=18'}
     hasBin: true
 
-  pnpm@10.2.0:
-    resolution: {integrity: sha512-DSc2TgE5xqre7WWtoVMTXgypbI2kISO9UAR/lhM53Hp1j8LpRLQo9SvlcNG9M3JFXBxl+i56oL+/kxGQ+VUgAQ==}
+  pnpm@10.2.1:
+    resolution: {integrity: sha512-OYA1x71pbQugsQpojtVYKFMp0n6plIBKUrrZFn2OOnK8uZP5aZWF08old5rGSUnvQidXpsMRAsEquTLly+XMkg==}
     engines: {node: '>=18.12'}
     hasBin: true
 
@@ -2962,7 +2962,7 @@ snapshots:
     optionalDependencies:
       fsevents: 2.3.2
 
-  pnpm@10.2.0: {}
+  pnpm@10.2.1: {}
 
   postcss@8.5.1:
     dependencies:
