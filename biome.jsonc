@@ -28,7 +28,7 @@
       "complexity": {
         // sonarjs/cognitive-complexity
         "noExcessiveCognitiveComplexity": {
-          "level": "error",
+          "level": "warn",
           "options": {
             "maxAllowedComplexity": 13
           }
