@@ -24,7 +24,10 @@
   "linter": {
     "enabled": true,
     "rules": {
-      "recommended": true
+      "recommended": true,
+      "correctness": {
+        "noUnusedImports": "error"
+      }
     },
     "ignore": ["**/dist", "**/node_modules", "**/routeTree.gen.ts"]
   },
