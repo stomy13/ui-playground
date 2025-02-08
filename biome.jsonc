@@ -40,10 +40,15 @@
       },
       "nursery": {
         // react-refresh/only-export-components
-        "useComponentExportOnlyModules": "error"
+        "useComponentExportOnlyModules": "error",
+        // react/jsx-curly-brace-presence
+        "useConsistentCurlyBraces": "error"
       },
       "style": {
-        "noImplicitBoolean": "error"
+        // react/jsx-boolean-value
+        "noImplicitBoolean": "error",
+        // react/jsx-fragments
+        "useFragmentSyntax": "error"
       }
     },
     "ignore": ["**/dist", "**/node_modules", "**/routeTree.gen.ts"]

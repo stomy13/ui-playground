@@ -8,7 +8,7 @@ import { Layout } from './components/Layout/Layout'
 export function Home() {
   return (
     <MainLayout>
-      <Helmet title={'Home'} />
+      <Helmet title="Home" />
       <Layout>
         <PlaygroundCard />
         <HeartLaundryCard />
