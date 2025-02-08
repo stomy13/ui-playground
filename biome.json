@@ -27,6 +27,12 @@
       "recommended": true,
       "correctness": {
         "noUnusedImports": "error"
+      },
+      "style": {
+        "noImplicitBoolean": "error"
+      },
+      "nursery": {
+        "useComponentExportOnlyModules": "error"
       }
     },
     "ignore": ["**/dist", "**/node_modules", "**/routeTree.gen.ts"]

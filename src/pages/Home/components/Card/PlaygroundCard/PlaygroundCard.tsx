@@ -22,7 +22,7 @@ export function PlaygroundCard() {
           alt="playground"
         />
         <CardContent>
-          <Typography gutterBottom variant="h5" component="div">
+          <Typography gutterBottom={true} variant="h5" component="div">
             Playground🛝
           </Typography>
           <Typography variant="body2" color="text.secondary">

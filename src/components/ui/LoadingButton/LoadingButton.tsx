@@ -30,7 +30,7 @@ export function LoadingButton({
   return isLoading ? (
     <Button
       variant="contained"
-      disabled
+      disabled={true}
       sx={{
         width: dimensions.width,
         height: dimensions.height,

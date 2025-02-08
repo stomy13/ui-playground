@@ -22,7 +22,7 @@ export function React19Card() {
           alt="react19"
         />
         <CardContent>
-          <Typography gutterBottom variant="h5" component="div">
+          <Typography gutterBottom={true} variant="h5" component="div">
             React19🛠
           </Typography>
           <Typography variant="body2" color="text.secondary">

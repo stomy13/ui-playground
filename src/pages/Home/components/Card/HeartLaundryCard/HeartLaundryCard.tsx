@@ -19,7 +19,7 @@ export function HeartLaundryCard() {
           alt="cat"
         />
         <CardContent>
-          <Typography gutterBottom variant="h5" component="div">
+          <Typography gutterBottom={true} variant="h5" component="div">
             Heart Laundry❤️🧺
           </Typography>
           <Typography variant="body2" color="text.secondary">
