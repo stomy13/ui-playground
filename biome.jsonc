@@ -25,14 +25,25 @@
     "enabled": true,
     "rules": {
       "recommended": true,
+      "complexity": {
+        // sonarjs/cognitive-complexity
+        "noExcessiveCognitiveComplexity": {
+          "level": "error",
+          "options": {
+            "maxAllowedComplexity": 13
+          }
+        }
+      },
       "correctness": {
+        // unused-imports/no-unused-imports
         "noUnusedImports": "error"
+      },
+      "nursery": {
+        // react-refresh/only-export-components
+        "useComponentExportOnlyModules": "error"
       },
       "style": {
         "noImplicitBoolean": "error"
-      },
-      "nursery": {
-        "useComponentExportOnlyModules": "error"
       }
     },
     "ignore": ["**/dist", "**/node_modules", "**/routeTree.gen.ts"]
