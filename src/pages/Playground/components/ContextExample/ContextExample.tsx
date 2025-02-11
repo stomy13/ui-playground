@@ -21,7 +21,8 @@ export function ContextExample() {
     </EquipmentContainer>
   )
 }
-export function Section({ children }: { children: ReactNode }) {
+
+function Section({ children }: { children: ReactNode }) {
   const level = useContext(LevelContext)
   return (
     <section className="section">
@@ -31,7 +32,7 @@ export function Section({ children }: { children: ReactNode }) {
   )
 }
 
-export function Heading({ children }: { children: ReactNode }) {
+function Heading({ children }: { children: ReactNode }) {
   const level = useContext(LevelContext)
   switch (level) {
     case 0:
