@@ -26,7 +26,6 @@
     "rules": {
       "recommended": true,
       "complexity": {
-        // sonarjs/cognitive-complexity
         "noExcessiveCognitiveComplexity": {
           "level": "warn",
           "options": {
@@ -35,19 +34,14 @@
         }
       },
       "correctness": {
-        // unused-imports/no-unused-imports
         "noUnusedImports": "error"
       },
       "nursery": {
-        // react-refresh/only-export-components
         "useComponentExportOnlyModules": "error",
-        // react/jsx-curly-brace-presence
         "useConsistentCurlyBraces": "error"
       },
       "style": {
-        // react/jsx-boolean-value
         "noImplicitBoolean": "error",
-        // react/jsx-fragments
         "useFragmentSyntax": "error"
       }
     },
