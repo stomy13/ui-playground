@@ -32,7 +32,7 @@
     "@playwright/test": "^1.50.1",
     "@tanstack/router-devtools": "^1.112.6",
     "@tanstack/router-plugin": "^1.112.3",
-    "@types/node": "^22.13.8",
+    "@types/node": "^22.13.9",
     "@types/react": "19.0.10",
     "@types/react-dom": "19.0.4",
     "@types/uuid": "^10.0.0",
