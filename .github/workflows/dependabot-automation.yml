@@ -14,13 +14,13 @@ jobs:
     steps:
       - name: Generate token
         id: generate_token
-        uses: actions/create-github-app-token@v2
+        uses: actions/create-github-app-token@3ff1caaa28b64c9cc276ce0a02e2ff584f3900c5 # v2.0.2
         with:
           app_id: ${{ secrets.AUTO_MERGE_BOT_APP_ID }}
           private_key: ${{ secrets.AUTO_MERGE_BOT_PRIVATE_KEY }}
       - name: Dependabot metadata
         id: metadata
-        uses: dependabot/fetch-metadata@v2
+        uses: dependabot/fetch-metadata@d7267f607e9d3fb96fc2fbe83e0af444713e90b7 # v2.3.0
         with:
           GITHUB_TOKEN: ${{ steps.generate_token.outputs.token }}
       - name: Approve & enable auto-merge for Dependabot PR
