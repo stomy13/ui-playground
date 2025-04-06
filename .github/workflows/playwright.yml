@@ -49,7 +49,7 @@ jobs:
         run: pnpm exec playwright install-deps
 
       - name: Run Playwright tests
-        run: TZ=Asia/Tokyo xvfb-run pnpm exec playwright test"
+        run: TZ=Asia/Tokyo pnpm exec playwright test"
 
       - name: Upload test results
         if: always()
