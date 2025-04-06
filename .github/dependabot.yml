@@ -1,35 +1,35 @@
 version: 2
 updates:
-  - package-ecosystem: 'github-actions'
-    directory: '/'
+  - package-ecosystem: "github-actions"
+    directory: "/"
     schedule:
-      interval: 'weekly'
+      interval: "weekly"
 
-  - package-ecosystem: 'npm'
-    directory: '/'
+  - package-ecosystem: "npm"
+    directory: "/"
     schedule:
-      interval: 'daily'
-      time: '09:00'
-      timezone: 'Asia/Tokyo'
+      interval: "daily"
+      time: "07:00"
+      timezone: "Asia/Tokyo"
 
     groups:
       react:
         patterns:
-          - 'react'
-          - 'react-dom'
-          - '@types/react'
-          - '@types/react-dom'
+          - "react"
+          - "react-dom"
+          - "@types/react"
+          - "@types/react-dom"
       tanstack-query:
         patterns:
-          - '@tanstack/react-query'
-          - '@tanstack/react-query-devtools'
+          - "@tanstack/react-query"
+          - "@tanstack/react-query-devtools"
       tanstack-router:
         patterns:
-          - '@tanstack/react-router'
-          - '@tanstack/router-devtools'
-          - '@tanstack/router-plugin'
+          - "@tanstack/react-router"
+          - "@tanstack/router-devtools"
+          - "@tanstack/router-plugin"
       mui:
         patterns:
-          - '@mui/material'
-          - '@mui/icons-material'
-          - '@mui/system'
+          - "@mui/material"
+          - "@mui/icons-material"
+          - "@mui/system"
