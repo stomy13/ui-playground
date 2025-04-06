@@ -40,7 +40,7 @@
     "@vitejs/plugin-react-swc": "^3.8.1",
     "gh-pages": "^6.3.0",
     "immer": "^10.1.1",
-    "typescript": "^5.8.2",
+    "typescript": "^5.8.3",
     "vite": "^6.2.5",
     "vitest": "^3.1.1"
   },
