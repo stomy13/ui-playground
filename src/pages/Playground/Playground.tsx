@@ -15,6 +15,7 @@ export function Playground() {
         sx={{
           display: 'flex',
           justifyContent: 'center',
+          py: 2,
         }}
       >
         <Box
