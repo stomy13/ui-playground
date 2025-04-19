@@ -23,6 +23,7 @@ updates:
         patterns:
           - "@tanstack/react-query"
           - "@tanstack/react-query-devtools"
+          - "@tanstack/eslint-plugin-query"
       tanstack-router:
         patterns:
           - "@tanstack/react-router"
