@@ -30,43 +30,43 @@ const SuspenseLazyRoute = SuspenseLazyImport.update({
   id: '/suspense',
   path: '/suspense',
   getParentRoute: () => rootRoute,
-} as any).lazy(() => import('./routes/suspense.lazy').then((d) => d.Route))
+} as any).lazy(() => import('./routes/suspense.lazy').then(d => d.Route))
 
 const React19LazyRoute = React19LazyImport.update({
   id: '/react19',
   path: '/react19',
   getParentRoute: () => rootRoute,
-} as any).lazy(() => import('./routes/react19.lazy').then((d) => d.Route))
+} as any).lazy(() => import('./routes/react19.lazy').then(d => d.Route))
 
 const ProxyLazyRoute = ProxyLazyImport.update({
   id: '/proxy',
   path: '/proxy',
   getParentRoute: () => rootRoute,
-} as any).lazy(() => import('./routes/proxy.lazy').then((d) => d.Route))
+} as any).lazy(() => import('./routes/proxy.lazy').then(d => d.Route))
 
 const PlaygroundLazyRoute = PlaygroundLazyImport.update({
   id: '/playground',
   path: '/playground',
   getParentRoute: () => rootRoute,
-} as any).lazy(() => import('./routes/playground.lazy').then((d) => d.Route))
+} as any).lazy(() => import('./routes/playground.lazy').then(d => d.Route))
 
 const HeartlaundryLazyRoute = HeartlaundryLazyImport.update({
   id: '/heartlaundry',
   path: '/heartlaundry',
   getParentRoute: () => rootRoute,
-} as any).lazy(() => import('./routes/heartlaundry.lazy').then((d) => d.Route))
+} as any).lazy(() => import('./routes/heartlaundry.lazy').then(d => d.Route))
 
 const AboutLazyRoute = AboutLazyImport.update({
   id: '/about',
   path: '/about',
   getParentRoute: () => rootRoute,
-} as any).lazy(() => import('./routes/about.lazy').then((d) => d.Route))
+} as any).lazy(() => import('./routes/about.lazy').then(d => d.Route))
 
 const IndexLazyRoute = IndexLazyImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRoute,
-} as any).lazy(() => import('./routes/index.lazy').then((d) => d.Route))
+} as any).lazy(() => import('./routes/index.lazy').then(d => d.Route))
 
 // Populate the FileRoutesByPath interface
 
