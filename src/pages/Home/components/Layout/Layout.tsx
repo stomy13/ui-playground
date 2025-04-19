@@ -11,12 +11,18 @@ export function Layout({ children }: Props) {
       sx={{
         display: 'flex',
         justifyContent: 'center',
-        alignItems: 'center',
-        height: '100vh',
-        gap: 2,
+        py: 2,
       }}
     >
-      {children}
+      <Box
+        sx={{
+          display: 'grid',
+          gridTemplateColumns: 'repeat(3, 1fr)',
+          gap: 2,
+        }}
+      >
+        {children}
+      </Box>
     </Box>
   )
 }

@@ -16,6 +16,7 @@ import { Route as rootRoute } from './routes/__root'
 
 // Create Virtual Routes
 
+const SuspenseLazyImport = createFileRoute('/suspense')()
 const React19LazyImport = createFileRoute('/react19')()
 const ProxyLazyImport = createFileRoute('/proxy')()
 const PlaygroundLazyImport = createFileRoute('/playground')()
@@ -25,41 +26,47 @@ const IndexLazyImport = createFileRoute('/')()
 
 // Create/Update Routes
 
+const SuspenseLazyRoute = SuspenseLazyImport.update({
+  id: '/suspense',
+  path: '/suspense',
+  getParentRoute: () => rootRoute,
+} as any).lazy(() => import('./routes/suspense.lazy').then((d) => d.Route))
+
 const React19LazyRoute = React19LazyImport.update({
   id: '/react19',
   path: '/react19',
   getParentRoute: () => rootRoute,
-} as any).lazy(() => import('./routes/react19.lazy').then(d => d.Route))
+} as any).lazy(() => import('./routes/react19.lazy').then((d) => d.Route))
 
 const ProxyLazyRoute = ProxyLazyImport.update({
   id: '/proxy',
   path: '/proxy',
   getParentRoute: () => rootRoute,
-} as any).lazy(() => import('./routes/proxy.lazy').then(d => d.Route))
+} as any).lazy(() => import('./routes/proxy.lazy').then((d) => d.Route))
 
 const PlaygroundLazyRoute = PlaygroundLazyImport.update({
   id: '/playground',
   path: '/playground',
   getParentRoute: () => rootRoute,
-} as any).lazy(() => import('./routes/playground.lazy').then(d => d.Route))
+} as any).lazy(() => import('./routes/playground.lazy').then((d) => d.Route))
 
 const HeartlaundryLazyRoute = HeartlaundryLazyImport.update({
   id: '/heartlaundry',
   path: '/heartlaundry',
   getParentRoute: () => rootRoute,
-} as any).lazy(() => import('./routes/heartlaundry.lazy').then(d => d.Route))
+} as any).lazy(() => import('./routes/heartlaundry.lazy').then((d) => d.Route))
 
 const AboutLazyRoute = AboutLazyImport.update({
   id: '/about',
   path: '/about',
   getParentRoute: () => rootRoute,
-} as any).lazy(() => import('./routes/about.lazy').then(d => d.Route))
+} as any).lazy(() => import('./routes/about.lazy').then((d) => d.Route))
 
 const IndexLazyRoute = IndexLazyImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRoute,
-} as any).lazy(() => import('./routes/index.lazy').then(d => d.Route))
+} as any).lazy(() => import('./routes/index.lazy').then((d) => d.Route))
 
 // Populate the FileRoutesByPath interface
 
@@ -107,6 +114,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof React19LazyImport
       parentRoute: typeof rootRoute
     }
+    '/suspense': {
+      id: '/suspense'
+      path: '/suspense'
+      fullPath: '/suspense'
+      preLoaderRoute: typeof SuspenseLazyImport
+      parentRoute: typeof rootRoute
+    }
   }
 }
 
@@ -119,6 +133,7 @@ export interface FileRoutesByFullPath {
   '/playground': typeof PlaygroundLazyRoute
   '/proxy': typeof ProxyLazyRoute
   '/react19': typeof React19LazyRoute
+  '/suspense': typeof SuspenseLazyRoute
 }
 
 export interface FileRoutesByTo {
@@ -128,6 +143,7 @@ export interface FileRoutesByTo {
   '/playground': typeof PlaygroundLazyRoute
   '/proxy': typeof ProxyLazyRoute
   '/react19': typeof React19LazyRoute
+  '/suspense': typeof SuspenseLazyRoute
 }
 
 export interface FileRoutesById {
@@ -138,6 +154,7 @@ export interface FileRoutesById {
   '/playground': typeof PlaygroundLazyRoute
   '/proxy': typeof ProxyLazyRoute
   '/react19': typeof React19LazyRoute
+  '/suspense': typeof SuspenseLazyRoute
 }
 
 export interface FileRouteTypes {
@@ -149,8 +166,16 @@ export interface FileRouteTypes {
     | '/playground'
     | '/proxy'
     | '/react19'
+    | '/suspense'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/about' | '/heartlaundry' | '/playground' | '/proxy' | '/react19'
+  to:
+    | '/'
+    | '/about'
+    | '/heartlaundry'
+    | '/playground'
+    | '/proxy'
+    | '/react19'
+    | '/suspense'
   id:
     | '__root__'
     | '/'
@@ -159,6 +184,7 @@ export interface FileRouteTypes {
     | '/playground'
     | '/proxy'
     | '/react19'
+    | '/suspense'
   fileRoutesById: FileRoutesById
 }
 
@@ -169,6 +195,7 @@ export interface RootRouteChildren {
   PlaygroundLazyRoute: typeof PlaygroundLazyRoute
   ProxyLazyRoute: typeof ProxyLazyRoute
   React19LazyRoute: typeof React19LazyRoute
+  SuspenseLazyRoute: typeof SuspenseLazyRoute
 }
 
 const rootRouteChildren: RootRouteChildren = {
@@ -178,6 +205,7 @@ const rootRouteChildren: RootRouteChildren = {
   PlaygroundLazyRoute: PlaygroundLazyRoute,
   ProxyLazyRoute: ProxyLazyRoute,
   React19LazyRoute: React19LazyRoute,
+  SuspenseLazyRoute: SuspenseLazyRoute,
 }
 
 export const routeTree = rootRoute
@@ -195,7 +223,8 @@ export const routeTree = rootRoute
         "/heartlaundry",
         "/playground",
         "/proxy",
-        "/react19"
+        "/react19",
+        "/suspense"
       ]
     },
     "/": {
@@ -215,6 +244,9 @@ export const routeTree = rootRoute
     },
     "/react19": {
       "filePath": "react19.lazy.tsx"
+    },
+    "/suspense": {
+      "filePath": "suspense.lazy.tsx"
     }
   }
 }

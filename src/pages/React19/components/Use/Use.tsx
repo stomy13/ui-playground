@@ -1,6 +1,6 @@
-import { Suspense, useState } from 'react'
 import { Button, Typography } from '@mui/material'
 import { Box } from '@mui/system'
+import { Suspense, useState } from 'react'
 import { EquipmentTitle } from '~/components/feature/EquipmentTitle/EquipmentTitle'
 import { ShowCount } from './ShowCount'
 
@@ -29,8 +29,8 @@ export function Use() {
         <Button variant="contained" onClick={handleClick}>
           Toggle Visible
         </Button>
-        <Suspense fallback={<Box>loading...</Box>}>
-          {visible && (
+        {visible && (
+          <Suspense fallback={<Box>loading...</Box>}>
             <ShowCount
               count={
                 new Promise(resolve =>
@@ -40,8 +40,8 @@ export function Use() {
                 )
               }
             />
-          )}
-        </Suspense>
+          </Suspense>
+        )}
       </Box>
     </Box>
   )
