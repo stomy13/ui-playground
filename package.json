@@ -47,7 +47,7 @@
     "gh-pages": "^6.3.0",
     "immer": "^10.1.1",
     "typescript": "^5.8.3",
-    "vite": "^6.3.2",
+    "vite": "^6.3.3",
     "vitest": "^3.1.2"
   },
   "packageManager": "pnpm@10.3.0",
