@@ -17,7 +17,8 @@
       "**/public",
       "**/pnpm-lock.yaml",
       "**/package.json",
-      "**/node_modules"
+      "**/node_modules",
+      "**/routeTree.gen.ts"
     ]
   },
   "organizeImports": { "enabled": true },
