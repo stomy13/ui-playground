@@ -17,6 +17,7 @@ const React19LazyRouteImport = createFileRoute('/react19')()
 const ProxyLazyRouteImport = createFileRoute('/proxy')()
 const PlaygroundLazyRouteImport = createFileRoute('/playground')()
 const HeartlaundryLazyRouteImport = createFileRoute('/heartlaundry')()
+const FormComparisonLazyRouteImport = createFileRoute('/form-comparison')()
 const AboutLazyRouteImport = createFileRoute('/about')()
 const IndexLazyRouteImport = createFileRoute('/')()
 
@@ -45,6 +46,13 @@ const HeartlaundryLazyRoute = HeartlaundryLazyRouteImport.update({
   path: '/heartlaundry',
   getParentRoute: () => rootRouteImport,
 } as any).lazy(() => import('./routes/heartlaundry.lazy').then((d) => d.Route))
+const FormComparisonLazyRoute = FormComparisonLazyRouteImport.update({
+  id: '/form-comparison',
+  path: '/form-comparison',
+  getParentRoute: () => rootRouteImport,
+} as any).lazy(() =>
+  import('./routes/form-comparison.lazy').then((d) => d.Route),
+)
 const AboutLazyRoute = AboutLazyRouteImport.update({
   id: '/about',
   path: '/about',
@@ -59,6 +67,7 @@ const IndexLazyRoute = IndexLazyRouteImport.update({
 export interface FileRoutesByFullPath {
   '/': typeof IndexLazyRoute
   '/about': typeof AboutLazyRoute
+  '/form-comparison': typeof FormComparisonLazyRoute
   '/heartlaundry': typeof HeartlaundryLazyRoute
   '/playground': typeof PlaygroundLazyRoute
   '/proxy': typeof ProxyLazyRoute
@@ -68,6 +77,7 @@ export interface FileRoutesByFullPath {
 export interface FileRoutesByTo {
   '/': typeof IndexLazyRoute
   '/about': typeof AboutLazyRoute
+  '/form-comparison': typeof FormComparisonLazyRoute
   '/heartlaundry': typeof HeartlaundryLazyRoute
   '/playground': typeof PlaygroundLazyRoute
   '/proxy': typeof ProxyLazyRoute
@@ -78,6 +88,7 @@ export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexLazyRoute
   '/about': typeof AboutLazyRoute
+  '/form-comparison': typeof FormComparisonLazyRoute
   '/heartlaundry': typeof HeartlaundryLazyRoute
   '/playground': typeof PlaygroundLazyRoute
   '/proxy': typeof ProxyLazyRoute
@@ -89,6 +100,7 @@ export interface FileRouteTypes {
   fullPaths:
     | '/'
     | '/about'
+    | '/form-comparison'
     | '/heartlaundry'
     | '/playground'
     | '/proxy'
@@ -98,6 +110,7 @@ export interface FileRouteTypes {
   to:
     | '/'
     | '/about'
+    | '/form-comparison'
     | '/heartlaundry'
     | '/playground'
     | '/proxy'
@@ -107,6 +120,7 @@ export interface FileRouteTypes {
     | '__root__'
     | '/'
     | '/about'
+    | '/form-comparison'
     | '/heartlaundry'
     | '/playground'
     | '/proxy'
@@ -117,6 +131,7 @@ export interface FileRouteTypes {
 export interface RootRouteChildren {
   IndexLazyRoute: typeof IndexLazyRoute
   AboutLazyRoute: typeof AboutLazyRoute
+  FormComparisonLazyRoute: typeof FormComparisonLazyRoute
   HeartlaundryLazyRoute: typeof HeartlaundryLazyRoute
   PlaygroundLazyRoute: typeof PlaygroundLazyRoute
   ProxyLazyRoute: typeof ProxyLazyRoute
@@ -161,6 +176,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof HeartlaundryLazyRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/form-comparison': {
+      id: '/form-comparison'
+      path: '/form-comparison'
+      fullPath: '/form-comparison'
+      preLoaderRoute: typeof FormComparisonLazyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/about': {
       id: '/about'
       path: '/about'
@@ -181,6 +203,7 @@ declare module '@tanstack/react-router' {
 const rootRouteChildren: RootRouteChildren = {
   IndexLazyRoute: IndexLazyRoute,
   AboutLazyRoute: AboutLazyRoute,
+  FormComparisonLazyRoute: FormComparisonLazyRoute,
   HeartlaundryLazyRoute: HeartlaundryLazyRoute,
   PlaygroundLazyRoute: PlaygroundLazyRoute,
   ProxyLazyRoute: ProxyLazyRoute,
