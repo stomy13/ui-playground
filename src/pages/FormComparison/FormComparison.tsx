@@ -9,25 +9,37 @@ export function FormComparison() {
     <MainLayout>
       <Helmet title="Form の実装比較" />
       <Container maxWidth="xl" sx={{ py: 4 }}>
-        <Typography variant="h4" component="h1" gutterBottom={true} align="center">
+        <Typography
+          variant="h4"
+          component="h1"
+          gutterBottom={true}
+          align="center"
+        >
           Form の実装比較
         </Typography>
-        <Typography variant="subtitle1" color="text.secondary" align="center" sx={{ mb: 4 }}>
+        <Typography
+          variant="subtitle1"
+          color="text.secondary"
+          align="center"
+          sx={{ mb: 4 }}
+        >
           zod vs valibot + @conform-to/react を使用した旅行予約フォーム
         </Typography>
-        
-        <Box sx={{ 
-          display: 'grid', 
-          gridTemplateColumns: { xs: '1fr', md: '1fr 1fr' }, 
-          gap: 4 
-        }}>
+
+        <Box
+          sx={{
+            display: 'grid',
+            gridTemplateColumns: { xs: '1fr', md: '1fr 1fr' },
+            gap: 4,
+          }}
+        >
           <Paper elevation={3} sx={{ p: 3 }}>
             <Typography variant="h5" component="h2" gutterBottom={true}>
               Zod + @conform-to/zod
             </Typography>
             <TravelFormZod />
           </Paper>
-          
+
           <Paper elevation={3} sx={{ p: 3 }}>
             <Typography variant="h5" component="h2" gutterBottom={true}>
               Valibot + @conform-to/valibot
