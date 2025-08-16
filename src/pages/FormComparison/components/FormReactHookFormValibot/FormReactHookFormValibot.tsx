@@ -105,14 +105,6 @@ export function FormReactHookFormValibot() {
     reset,
   } = useForm<UserFormData>({
     resolver: valibotResolver(userRegistrationSchema),
-    defaultValues: {
-      username: '',
-      email: '',
-      password: '',
-      confirmPassword: '',
-      age: 0,
-      country: undefined,
-    },
   })
 
   const onSubmit = async (data: UserFormData) => {
