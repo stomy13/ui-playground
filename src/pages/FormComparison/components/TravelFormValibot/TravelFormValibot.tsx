@@ -50,7 +50,10 @@ const userRegistrationSchema = v.pipe(
     ),
   }),
   v.forward(
-    v.check(data => data.password === data.confirmPassword, 'パスワードが一致しません'),
+    v.check(
+      data => data.password === data.confirmPassword,
+      'パスワードが一致しません',
+    ),
     ['confirmPassword'],
   ),
 )
@@ -67,7 +70,9 @@ async function submitUserRegistration(
   _prevState: ActionState,
   formData: FormData,
 ): Promise<ActionState> {
-  const submission = parseWithValibot(formData, { schema: userRegistrationSchema })
+  const submission = parseWithValibot(formData, {
+    schema: userRegistrationSchema,
+  })
 
   if (submission.status !== 'success') {
     return {
@@ -170,11 +175,7 @@ export function TravelFormValibot() {
 
       <FormControl fullWidth={true} error={!!fields.country.errors}>
         <InputLabel>国</InputLabel>
-        <Select
-          {...getSelectProps(fields.country)}
-          label="国"
-          defaultValue=""
-        >
+        <Select {...getSelectProps(fields.country)} label="国" defaultValue="">
           <MenuItem value="japan">日本</MenuItem>
           <MenuItem value="usa">アメリカ</MenuItem>
           <MenuItem value="uk">イギリス</MenuItem>

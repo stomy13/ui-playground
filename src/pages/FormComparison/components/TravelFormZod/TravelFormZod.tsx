@@ -32,7 +32,9 @@ const userRegistrationSchema = z
     password: z
       .string({ message: 'パスワードを入力してください' })
       .min(8, 'パスワードは8文字以上である必要があります'),
-    confirmPassword: z.string({ message: 'パスワード（確認）を入力してください' }),
+    confirmPassword: z.string({
+      message: 'パスワード（確認）を入力してください',
+    }),
     age: z
       .number({ message: '年齢を入力してください' })
       .int('年齢は整数で入力してください')
@@ -167,11 +169,7 @@ export function TravelFormZod() {
 
       <FormControl fullWidth={true} error={!!fields.country.errors}>
         <InputLabel>国</InputLabel>
-        <Select
-          {...getSelectProps(fields.country)}
-          label="国"
-          defaultValue=""
-        >
+        <Select {...getSelectProps(fields.country)} label="国" defaultValue="">
           <MenuItem value="japan">日本</MenuItem>
           <MenuItem value="usa">アメリカ</MenuItem>
           <MenuItem value="uk">イギリス</MenuItem>
