@@ -27,23 +27,25 @@ import * as v from 'valibot'
 const travelSchema = v.pipe(
   v.object({
     travelType: v.pipe(
-      v.picklist(['domestic', 'international', 'daytrip']),
-      v.nonEmpty('旅行タイプを選択してください'),
+      v.picklist(
+        ['domestic', 'international', 'daytrip'],
+        '旅行タイプを選択してください',
+      ),
     ),
     participants: v.pipe(
-      v.number(),
+      v.number('参加人数を入力してください'),
       v.minValue(1, '人数は1人以上である必要があります'),
     ),
     ageGroups: v.pipe(
-      v.array(v.picklist(['child', 'adult', 'senior'])),
+      v.array(v.picklist(['child', 'adult', 'senior'], '年齢層を選択してください')),
       v.minLength(1, '年齢層を選択してください'),
     ),
     passportRequired: v.optional(v.boolean()),
     visaRequired: v.optional(v.boolean()),
-    childAgeRanges: v.optional(v.array(v.picklist(['0-2', '3-6', '7-12']))),
-    childServices: v.optional(v.array(v.string())),
-    accessibilityNeeds: v.optional(v.array(v.string())),
-    specialRequests: v.optional(v.string()),
+    childAgeRanges: v.optional(v.array(v.picklist(['0-2', '3-6', '7-12'], 'お子様の年齢範囲を選択してください'))),
+    childServices: v.optional(v.array(v.string('お子様向けサービスを入力してください'))),
+    accessibilityNeeds: v.optional(v.array(v.string('バリアフリー対応要望を入力してください'))),
+    specialRequests: v.optional(v.string('特別なご要望を入力してください')),
   }),
   v.forward(
     v.check(data => {
@@ -133,7 +135,11 @@ export function TravelFormValibot() {
     >
       <FormControl fullWidth={true} error={!!fields.travelType.errors}>
         <InputLabel>旅行タイプ</InputLabel>
-        <Select {...getSelectProps(fields.travelType)} label="旅行タイプ">
+        <Select
+          {...getSelectProps(fields.travelType)}
+          label="旅行タイプ"
+          defaultValue=""
+        >
           <MenuItem value="domestic">国内旅行</MenuItem>
           <MenuItem value="international">海外旅行</MenuItem>
           <MenuItem value="daytrip">日帰り旅行</MenuItem>
