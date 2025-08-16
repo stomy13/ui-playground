@@ -108,7 +108,7 @@ async function submitUserRegistration(
   }
 }
 
-export function TravelFormValibot() {
+export function FormValibot() {
   const [state, formAction] = useActionState(submitUserRegistration, {
     success: false,
     message: '',

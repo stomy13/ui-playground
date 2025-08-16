@@ -102,7 +102,7 @@ async function submitUserRegistration(
   }
 }
 
-export function TravelFormZod() {
+export function FormZod() {
   const [state, formAction] = useActionState(submitUserRegistration, {
     success: false,
     message: '',
