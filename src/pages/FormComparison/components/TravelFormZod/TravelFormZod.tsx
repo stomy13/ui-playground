@@ -8,13 +8,9 @@ import { parseWithZod } from '@conform-to/zod'
 import {
   Box,
   Button,
-  Checkbox,
   Chip,
   FormControl,
-  FormControlLabel,
-  FormGroup,
   FormHelperText,
-  FormLabel,
   InputLabel,
   MenuItem,
   Select,
@@ -24,50 +20,51 @@ import {
 import { useActionState } from 'react'
 import { z } from 'zod'
 
-const travelSchema = z
+const userRegistrationSchema = z
   .object({
-    travelType: z.enum(['domestic', 'international', 'daytrip'], {
-      message: '旅行タイプを選択してください',
+    username: z
+      .string({ message: 'ユーザー名を入力してください' })
+      .min(3, 'ユーザー名は3文字以上である必要があります')
+      .max(20, 'ユーザー名は20文字以下である必要があります'),
+    email: z
+      .string({ message: 'メールアドレスを入力してください' })
+      .email('有効なメールアドレスを入力してください'),
+    password: z
+      .string({ message: 'パスワードを入力してください' })
+      .min(8, 'パスワードは8文字以上である必要があります'),
+    confirmPassword: z.string({ message: 'パスワード（確認）を入力してください' }),
+    age: z
+      .number({ message: '年齢を入力してください' })
+      .int('年齢は整数で入力してください')
+      .min(13, '13歳以上である必要があります')
+      .max(120, '有効な年齢を入力してください'),
+    country: z.enum(['japan', 'usa', 'uk', 'canada', 'australia', 'other'], {
+      message: '国を選択してください',
     }),
-    participants: z.number().min(1, '人数は1人以上である必要があります'),
-    ageGroups: z
-      .array(z.enum(['child', 'adult', 'senior']))
-      .min(1, '年齢層を選択してください'),
-    passportRequired: z.boolean().optional(),
-    visaRequired: z.boolean().optional(),
-    childAgeRanges: z.array(z.enum(['0-2', '3-6', '7-12'])).optional(),
-    childServices: z.array(z.string()).optional(),
-    accessibilityNeeds: z.array(z.string()).optional(),
-    specialRequests: z.string().optional(),
   })
   .superRefine((data, ctx) => {
-    if (
-      data.travelType === 'international' &&
-      data.ageGroups.includes('adult')
-    ) {
-      if (data.passportRequired === undefined) {
-        ctx.addIssue({
-          code: z.ZodIssueCode.custom,
-          message: 'パスポート情報の入力が必要です',
-          path: ['passportRequired'],
-        })
-      }
+    if (data.password !== data.confirmPassword) {
+      ctx.addIssue({
+        code: z.ZodIssueCode.custom,
+        message: 'パスワードが一致しません',
+        path: ['confirmPassword'],
+      })
     }
   })
 
-type TravelFormData = z.infer<typeof travelSchema>
+type UserFormData = z.infer<typeof userRegistrationSchema>
 
 interface ActionState {
   success: boolean
   message: string
-  data?: TravelFormData
+  data?: UserFormData
 }
 
-async function submitTravelForm(
+async function submitUserRegistration(
   _prevState: ActionState,
   formData: FormData,
 ): Promise<ActionState> {
-  const submission = parseWithZod(formData, { schema: travelSchema })
+  const submission = parseWithZod(formData, { schema: userRegistrationSchema })
 
   if (submission.status !== 'success') {
     return {
@@ -78,20 +75,21 @@ async function submitTravelForm(
 
   try {
     const existingData = JSON.parse(
-      localStorage.getItem('travelBookings') || '[]',
+      localStorage.getItem('userRegistrations') || '[]',
     )
+    const { confirmPassword, ...userData } = submission.value
     const newData = {
       id: Date.now(),
-      ...submission.value,
+      ...userData,
       createdAt: new Date().toISOString(),
       validationLibrary: 'zod',
     }
     existingData.push(newData)
-    localStorage.setItem('travelBookings', JSON.stringify(existingData))
+    localStorage.setItem('userRegistrations', JSON.stringify(existingData))
 
     return {
       success: true,
-      message: 'フォームが正常に送信されました',
+      message: 'ユーザー登録が完了しました',
       data: submission.value,
     }
   } catch (error) {
@@ -103,22 +101,17 @@ async function submitTravelForm(
 }
 
 export function TravelFormZod() {
-  const [state, formAction] = useActionState(submitTravelForm, {
+  const [state, formAction] = useActionState(submitUserRegistration, {
     success: false,
     message: '',
   })
 
   const [form, fields] = useForm({
     onValidate({ formData }) {
-      return parseWithZod(formData, { schema: travelSchema })
+      return parseWithZod(formData, { schema: userRegistrationSchema })
     },
     shouldRevalidate: 'onBlur',
   })
-
-  const travelType = fields.travelType.value
-  const ageGroups = Array.isArray(fields.ageGroups.value)
-    ? fields.ageGroups.value
-    : []
 
   return (
     <Box
@@ -127,240 +120,70 @@ export function TravelFormZod() {
       action={formAction}
       sx={{ display: 'flex', flexDirection: 'column', gap: 3 }}
     >
-      <FormControl fullWidth={true} error={!!fields.travelType.errors}>
-        <InputLabel>旅行タイプ</InputLabel>
-        <Select {...getSelectProps(fields.travelType)} label="旅行タイプ">
-          <MenuItem value="domestic">国内旅行</MenuItem>
-          <MenuItem value="international">海外旅行</MenuItem>
-          <MenuItem value="daytrip">日帰り旅行</MenuItem>
-        </Select>
-        <FormHelperText>{fields.travelType.errors}</FormHelperText>
-      </FormControl>
+      <TextField
+        {...getInputProps(fields.username, { type: 'text' })}
+        label="ユーザー名"
+        fullWidth={true}
+        error={!!fields.username.errors}
+        helperText={fields.username.errors}
+      />
 
       <TextField
-        {...getInputProps(fields.participants, { type: 'number' })}
-        label="参加人数"
+        {...getInputProps(fields.email, { type: 'email' })}
+        label="メールアドレス"
+        type="email"
+        fullWidth={true}
+        error={!!fields.email.errors}
+        helperText={fields.email.errors}
+      />
+
+      <TextField
+        {...getInputProps(fields.password, { type: 'password' })}
+        label="パスワード"
+        type="password"
+        fullWidth={true}
+        error={!!fields.password.errors}
+        helperText={fields.password.errors}
+      />
+
+      <TextField
+        {...getInputProps(fields.confirmPassword, { type: 'password' })}
+        label="パスワード（確認）"
+        type="password"
+        fullWidth={true}
+        error={!!fields.confirmPassword.errors}
+        helperText={fields.confirmPassword.errors}
+      />
+
+      <TextField
+        {...getInputProps(fields.age, { type: 'number' })}
+        label="年齢"
         type="number"
         fullWidth={true}
-        error={!!fields.participants.errors}
-        helperText={fields.participants.errors}
-        inputProps={{ min: 1 }}
+        error={!!fields.age.errors}
+        helperText={fields.age.errors}
+        slotProps={{ htmlInput: { min: 13, max: 120 } }}
       />
 
-      <FormControl component="fieldset" error={!!fields.ageGroups.errors}>
-        <FormLabel component="legend">年齢層（複数選択可）</FormLabel>
-        <FormGroup>
-          <FormControlLabel
-            control={
-              <Checkbox
-                {...getInputProps(fields.ageGroups, {
-                  type: 'checkbox',
-                  value: 'child',
-                })}
-              />
-            }
-            label="子供"
-          />
-          <FormControlLabel
-            control={
-              <Checkbox
-                {...getInputProps(fields.ageGroups, {
-                  type: 'checkbox',
-                  value: 'adult',
-                })}
-              />
-            }
-            label="大人"
-          />
-          <FormControlLabel
-            control={
-              <Checkbox
-                {...getInputProps(fields.ageGroups, {
-                  type: 'checkbox',
-                  value: 'senior',
-                })}
-              />
-            }
-            label="高齢者"
-          />
-        </FormGroup>
-        <FormHelperText>{fields.ageGroups.errors}</FormHelperText>
+      <FormControl fullWidth={true} error={!!fields.country.errors}>
+        <InputLabel>国</InputLabel>
+        <Select
+          {...getSelectProps(fields.country)}
+          label="国"
+          defaultValue=""
+        >
+          <MenuItem value="japan">日本</MenuItem>
+          <MenuItem value="usa">アメリカ</MenuItem>
+          <MenuItem value="uk">イギリス</MenuItem>
+          <MenuItem value="canada">カナダ</MenuItem>
+          <MenuItem value="australia">オーストラリア</MenuItem>
+          <MenuItem value="other">その他</MenuItem>
+        </Select>
+        <FormHelperText>{fields.country.errors}</FormHelperText>
       </FormControl>
 
-      {travelType === 'international' && ageGroups.includes('adult') && (
-        <Box sx={{ p: 2, bgcolor: 'grey.50', borderRadius: 1 }}>
-          <Typography variant="h6" gutterBottom={true}>
-            海外旅行情報
-          </Typography>
-          <FormGroup>
-            <FormControlLabel
-              control={
-                <Checkbox
-                  {...getInputProps(fields.passportRequired, {
-                    type: 'checkbox',
-                  })}
-                />
-              }
-              label="パスポート情報入力済み"
-            />
-            <FormControlLabel
-              control={
-                <Checkbox
-                  {...getInputProps(fields.visaRequired, { type: 'checkbox' })}
-                />
-              }
-              label="ビザが必要"
-            />
-          </FormGroup>
-          {fields.passportRequired.errors && (
-            <FormHelperText error={true}>
-              {fields.passportRequired.errors}
-            </FormHelperText>
-          )}
-        </Box>
-      )}
-
-      {ageGroups.includes('child') && (
-        <Box sx={{ p: 2, bgcolor: 'grey.50', borderRadius: 1 }}>
-          <Typography variant="h6" gutterBottom={true}>
-            お子様情報
-          </Typography>
-          <FormControl component="fieldset">
-            <FormLabel component="legend">年齢範囲（複数選択可）</FormLabel>
-            <FormGroup>
-              <FormControlLabel
-                control={
-                  <Checkbox
-                    {...getInputProps(fields.childAgeRanges, {
-                      type: 'checkbox',
-                      value: '0-2',
-                    })}
-                  />
-                }
-                label="0-2歳"
-              />
-              <FormControlLabel
-                control={
-                  <Checkbox
-                    {...getInputProps(fields.childAgeRanges, {
-                      type: 'checkbox',
-                      value: '3-6',
-                    })}
-                  />
-                }
-                label="3-6歳"
-              />
-              <FormControlLabel
-                control={
-                  <Checkbox
-                    {...getInputProps(fields.childAgeRanges, {
-                      type: 'checkbox',
-                      value: '7-12',
-                    })}
-                  />
-                }
-                label="7-12歳"
-              />
-            </FormGroup>
-          </FormControl>
-          <FormControl component="fieldset" sx={{ mt: 2 }}>
-            <FormLabel component="legend">追加サービス</FormLabel>
-            <FormGroup>
-              <FormControlLabel
-                control={
-                  <Checkbox
-                    {...getInputProps(fields.childServices, {
-                      type: 'checkbox',
-                      value: 'babysitting',
-                    })}
-                  />
-                }
-                label="ベビーシッター"
-              />
-              <FormControlLabel
-                control={
-                  <Checkbox
-                    {...getInputProps(fields.childServices, {
-                      type: 'checkbox',
-                      value: 'kidsmeal',
-                    })}
-                  />
-                }
-                label="キッズミール"
-              />
-              <FormControlLabel
-                control={
-                  <Checkbox
-                    {...getInputProps(fields.childServices, {
-                      type: 'checkbox',
-                      value: 'playground',
-                    })}
-                  />
-                }
-                label="キッズプレイエリア"
-              />
-            </FormGroup>
-          </FormControl>
-        </Box>
-      )}
-
-      {ageGroups.includes('senior') && (
-        <Box sx={{ p: 2, bgcolor: 'grey.50', borderRadius: 1 }}>
-          <Typography variant="h6" gutterBottom={true}>
-            バリアフリー対応
-          </Typography>
-          <FormControl component="fieldset">
-            <FormLabel component="legend">対応要望（複数選択可）</FormLabel>
-            <FormGroup>
-              <FormControlLabel
-                control={
-                  <Checkbox
-                    {...getInputProps(fields.accessibilityNeeds, {
-                      type: 'checkbox',
-                      value: 'wheelchair',
-                    })}
-                  />
-                }
-                label="車椅子対応"
-              />
-              <FormControlLabel
-                control={
-                  <Checkbox
-                    {...getInputProps(fields.accessibilityNeeds, {
-                      type: 'checkbox',
-                      value: 'elevator',
-                    })}
-                  />
-                }
-                label="エレベーター完備"
-              />
-              <FormControlLabel
-                control={
-                  <Checkbox
-                    {...getInputProps(fields.accessibilityNeeds, {
-                      type: 'checkbox',
-                      value: 'handrails',
-                    })}
-                  />
-                }
-                label="手すり設置"
-              />
-            </FormGroup>
-          </FormControl>
-        </Box>
-      )}
-
-      <TextField
-        {...getInputProps(fields.specialRequests, { type: 'text' })}
-        label="特別なご要望"
-        multiline={true}
-        rows={3}
-        fullWidth={true}
-        placeholder="その他ご要望があればご記入ください"
-      />
-
       <Button type="submit" variant="contained" size="large">
-        予約申し込み
+        ユーザー登録
       </Button>
 
       {state.message && (
