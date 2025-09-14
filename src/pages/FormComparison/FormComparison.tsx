@@ -24,7 +24,8 @@ export function FormComparison() {
           align="center"
           sx={{ mb: 4 }}
         >
-          zod vs valibot（@conform-to/react、react-hook-form）を使用したユーザー登録フォーム
+          zod vs
+          valibot（@conform-to/react、react-hook-form）を使用したユーザー登録フォーム
         </Typography>
 
         <Box
