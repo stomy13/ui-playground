@@ -48,6 +48,12 @@ pnpm preview                   # Preview production build
 - Path alias `~/` maps to `./src/`
 - Promise-based IndexedDB operations wrapped in React hooks
 
+**Home Page Structure:**
+- `src/pages/Home/Home.tsx`: Main landing page with navigation cards in 3-column grid
+- `src/pages/Home/components/Layout/`: Grid layout component (3 columns, centered)
+- `src/pages/Home/components/Card/`: Navigation cards for each feature area (Playground, React19, HeartLaundry, etc.)
+- Cards use Material-UI `CardActionArea` with TanStack Router navigation
+
 ## Build Configuration
 
 - **Vite 6+** with React SWC plugin for fast builds
